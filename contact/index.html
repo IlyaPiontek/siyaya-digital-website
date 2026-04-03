@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Siyaya Digital</title>
+  <meta name="description" content="Contact Siyaya Digital. App support, legal enquiries, and general questions.">
+  <link rel="stylesheet" href="/public/style.css">
+  <style>
+    .contact-page { padding: 72px 0 100px; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+    .contact-card {
+      background: var(--white); border-radius: var(--r-lg);
+      border: 1px solid var(--border); padding: 32px;
+      box-shadow: var(--shadow-sm);
+    }
+    .contact-card--primary {
+      background: linear-gradient(135deg, var(--g600), var(--g800));
+      border-color: transparent;
+      grid-column: 1 / -1;
+    }
+    .contact-card__icon { font-size: 32px; margin-bottom: 14px; }
+    .contact-card__title {
+      font-size: 1.1rem; font-weight: 800;
+      color: var(--text); margin-bottom: 8px;
+    }
+    .contact-card--primary .contact-card__title { color: white; }
+    .contact-card__text {
+      font-size: 0.88rem; color: var(--text-light);
+      line-height: 1.7; margin-bottom: 20px;
+    }
+    .contact-card--primary .contact-card__text { color: rgba(255,255,255,.65); }
+    .contact-card__email {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--g100); color: var(--g700);
+      border-radius: var(--r-md); padding: 12px 20px;
+      font-size: 0.9rem; font-weight: 800; text-decoration: none;
+      transition: all .2s;
+    }
+    .contact-card__email:hover { background: var(--g200); text-decoration: none; }
+    .contact-card--primary .contact-card__email {
+      background: rgba(255,255,255,.15); color: white;
+      border: 1px solid rgba(255,255,255,.25);
+    }
+    .contact-card--primary .contact-card__email:hover {
+      background: rgba(255,255,255,.25);
+    }
+    .contact-detail {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 10px 0; border-bottom: 1px solid var(--g50);
+      font-size: 0.85rem;
+    }
+    .contact-detail:last-child { border-bottom: none; }
+    .contact-detail__label { color: var(--text-faint); font-weight: 700; width: 80px; flex-shrink: 0; }
+    .contact-detail__value { color: var(--text-light); }
+    .response-note {
+      background: var(--g50); border: 1px solid var(--g200);
+      border-radius: var(--r-md); padding: 16px 20px;
+      font-size: 0.83rem; color: var(--text-light);
+      display: flex; gap: 10px; align-items: flex-start;
+      margin-top: 24px;
+    }
+    @media(max-width:768px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-card--primary { grid-column: auto; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="/"><img src="/public/logo.png" alt="Siyaya Digital" class="nav__logo-mark">SIYAYA DIGITAL</a>
+    <div class="nav__links">
+      <a class="nav__link" href="/">Home</a>
+      <a class="nav__link" href="/lumio">Lumio</a>
+      <a class="nav__link" href="/impressum">Impressum</a>
+    </div>
+  </div>
+</nav>
+
+<div class="contact-page">
+  <div class="container--narrow">
+
+    <div style="margin-bottom: 8px;">
+      <a class="legal-back" href="/">← Back to Home</a>
+    </div>
+
+    <span class="eyebrow" style="color:var(--g400);">Get in touch</span>
+    <h1 style="color:var(--text);margin-bottom:14px;">Contact</h1>
+    <p style="font-size:1rem;max-width:480px;">
+      A real person reads and responds to every message.
+      We aim to reply within 48 hours.
+    </p>
+
+    <div class="contact-grid">
+
+      <!-- Primary contact -->
+      <div class="contact-card contact-card--primary">
+        <div class="contact-card__icon">📬</div>
+        <div class="contact-card__title">Email us</div>
+        <div class="contact-card__text">
+          For app support, legal enquiries, privacy questions, or anything else —
+          this is the right address. One inbox, one person, real answers.
+        </div>
+        <a class="contact-card__email" href="mailto:legal@siyaya-digital.com">
+          📧 &nbsp;legal@siyaya-digital.com
+        </a>
+      </div>
+
+      <!-- App support -->
+      <div class="contact-card">
+        <div class="contact-card__icon">🔦</div>
+        <div class="contact-card__title">Lumio — App Support</div>
+        <div class="contact-card__text">
+          Having an issue with Lumio? Flashlight not working, widget not showing,
+          or something else? Email us and we'll help.
+        </div>
+        <a class="contact-card__email" href="mailto:legal@siyaya-digital.com?subject=Lumio Support">
+          📧 &nbsp;Lumio support
+        </a>
+      </div>
+
+      <!-- Legal -->
+      <div class="contact-card">
+        <div class="contact-card__icon">⚖️</div>
+        <div class="contact-card__title">Legal & Privacy</div>
+        <div class="contact-card__text">
+          GDPR requests, data deletion, legal notices, or questions about
+          our privacy practices — same address, handled promptly.
+        </div>
+        <a class="contact-card__email" href="mailto:legal@siyaya-digital.com?subject=Legal Enquiry">
+          📧 &nbsp;Legal enquiry
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Company details -->
+    <div class="card" style="margin-top:24px;">
+      <div class="legal-clause">
+        <div class="clause-title">Company Details</div>
+        <div class="clause-body">
+          <div class="contact-detail">
+            <span class="contact-detail__label">Company</span>
+            <span class="contact-detail__value">IP Strategy UG (haftungsbeschränkt)</span>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-detail__label">Director</span>
+            <span class="contact-detail__value">Ilya Piontek</span>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-detail__label">Address</span>
+            <span class="contact-detail__value">Niederrheinstraße 46f, 41472 Neuss, Germany</span>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-detail__label">Register</span>
+            <span class="contact-detail__value">Amtsgericht Neuss HRB 23546</span>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-detail__label">Tax No.</span>
+            <span class="contact-detail__value">122/573/900/49</span>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-detail__label">Email</span>
+            <span class="contact-detail__value"><a href="mailto:legal@siyaya-digital.com">legal@siyaya-digital.com</a></span>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-detail__label">Web</span>
+            <span class="contact-detail__value">siyaya-digital.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="response-note">
+      <span style="font-size:16px;flex-shrink:0;">⏱️</span>
+      <span>We aim to respond to all emails within <strong>48 hours</strong> on business days.
+      For urgent App Store or legal matters, please indicate this in your subject line.</span>
+    </div>
+
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer__logo"><img src="/public/logo.png" alt="Siyaya Digital" style="width:28px;height:28px;object-fit:contain;vertical-align:middle;margin-right:8px;">SIYAYA DIGITAL</div>
+  <div class="footer__links">
+    <a class="footer__link" href="/lumio">Lumio</a>
+    <a class="footer__link" href="/privacy">Privacy Policy</a>
+    <a class="footer__link" href="/terms">Terms of Use</a>
+    <a class="footer__link" href="/impressum">Impressum</a>
+    <a class="footer__link" href="/contact">Contact</a>
+  </div>
+  <div class="footer__copy">© 2026 IP Strategy UG · Ilya Piontek · Neuss, Germany</div>
+</footer>
+
+</body>
+</html>

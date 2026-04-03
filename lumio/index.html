@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumio — Flashlight. Clean, fast, private.</title>
+  <meta name="description" content="Lumio is a clean, ad-free, privacy-first flashlight for iPhone. Torch, strobe, SOS, screen light, widget. €0.99 once, forever.">
+  <link rel="stylesheet" href="/public/style.css">
+  <style>
+    .lumio-hero {
+      background:linear-gradient(160deg,var(--g700) 0%,var(--g800) 100%);
+      padding:90px 0 72px; text-align:center;
+      position:relative; overflow:hidden;
+    }
+    .lumio-hero::before {
+      content:''; position:absolute; inset:0;
+      background:
+        radial-gradient(ellipse at 25% 20%, rgba(141,203,146,.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 75% 80%, rgba(58,144,64,.08) 0%, transparent 45%);
+    }
+    .lumio-hero__inner { position:relative; z-index:1; }
+    .lumio-icon {
+      width:88px; height:88px; border-radius:22px;
+      background:linear-gradient(135deg,#fff9c4,#ffe082);
+      display:flex; align-items:center; justify-content:center;
+      font-size:40px; margin:0 auto 22px;
+      box-shadow:0 8px 40px rgba(0,0,0,.3);
+    }
+    .lumio-hero h1 { color:white; margin-bottom:14px; }
+    .lumio-hero h1 em { color:var(--g300); font-style:italic; }
+    .lumio-hero__sub { font-size:1.05rem; color:rgba(255,255,255,.65); max-width:500px; margin:0 auto 36px; }
+    .lumio-badges { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:36px; }
+    .lumio-badge {
+      background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18);
+      border-radius:20px; padding:6px 15px;
+      font-size:0.78rem; font-weight:700; color:white;
+    }
+    .lumio-hero__ctas { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+    .btn--gold { background:#f5c842; color:#1a1a00 !important; box-shadow:0 4px 20px rgba(245,200,66,.4); }
+    .btn--gold:hover { background:#f0bb30; transform:translateY(-2px); text-decoration:none; }
+    .btn--ghost-white { background:rgba(255,255,255,.1); color:white !important; border:1px solid rgba(255,255,255,.2); }
+    .btn--ghost-white:hover { background:rgba(255,255,255,.18); text-decoration:none; }
+
+    /* Features */
+    .features { padding:90px 0; }
+    .features-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .feature-card {
+      background:var(--white); border-radius:var(--r-lg);
+      padding:26px; border:1px solid var(--border); box-shadow:var(--shadow-sm);
+    }
+    .feature-icon { font-size:30px; margin-bottom:12px; }
+    .feature-title { font-size:0.95rem; font-weight:800; color:var(--text); margin-bottom:7px; }
+    .feature-text { font-size:0.83rem; color:var(--text-light); line-height:1.65; }
+
+    /* Privacy vs */
+    .privacy-strip {
+      background:var(--g800); padding:90px 0;
+    }
+    .privacy-strip__inner {
+      display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center;
+    }
+    .privacy-strip h2 { color:white; margin-bottom:16px; }
+    .privacy-strip h2 em { color:var(--g300); font-style:italic; }
+    .privacy-strip__sub { color:rgba(255,255,255,.6); font-size:0.92rem; line-height:1.75; margin-bottom:28px; }
+    .privacy-points { display:flex; flex-direction:column; gap:12px; }
+    .pp {
+      display:flex; gap:14px; align-items:flex-start;
+      background:rgba(255,255,255,.06); border-radius:var(--r-md); padding:15px 17px;
+    }
+    .pp__icon  { font-size:19px; flex-shrink:0; margin-top:1px; }
+    .pp__title { font-size:0.87rem; font-weight:800; color:white; margin-bottom:3px; }
+    .pp__text  { font-size:0.78rem; color:rgba(255,255,255,.55); line-height:1.5; }
+
+    /* Pricing */
+    .pricing { padding:90px 0; text-align:center; }
+    .pricing-card {
+      max-width:400px; margin:0 auto;
+      background:var(--white); border-radius:var(--r-xl);
+      border:2px solid var(--g200); padding:44px 36px;
+      box-shadow:var(--shadow-md);
+    }
+    .price-badge { background:var(--g100); color:var(--g600); border-radius:20px; padding:4px 13px; font-size:0.68rem; font-weight:800; letter-spacing:2px; text-transform:uppercase; display:inline-block; margin-bottom:18px; }
+    .price-amount { font-size:3.2rem; font-weight:800; color:var(--g600); line-height:1; }
+    .price-period { font-size:0.88rem; color:var(--text-light); margin-bottom:28px; }
+    .price-features { text-align:left; margin-bottom:28px; }
+    .price-feature {
+      display:flex; align-items:center; gap:9px;
+      padding:9px 0; border-bottom:1px solid var(--g50);
+      font-size:0.85rem; color:var(--text-light);
+    }
+    .price-feature:last-child { border-bottom:none; }
+    .check { color:var(--g500); font-weight:800; font-size:0.85rem; }
+
+    /* Support */
+    .support { padding:72px 0; }
+    .support-card {
+      background:var(--white); border-radius:var(--r-xl);
+      border:1px solid var(--border); padding:40px;
+      display:flex; justify-content:space-between; align-items:center;
+      box-shadow:var(--shadow-sm); flex-wrap:wrap; gap:24px;
+    }
+    .support-card h3 { font-size:1.3rem; color:var(--text); margin-bottom:6px; }
+    .support-card p { font-size:0.9rem; color:var(--text-light); }
+
+    @media(max-width:768px){
+      .features-grid { grid-template-columns:1fr; }
+      .privacy-strip__inner { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="/"><img src="/public/logo.png" alt="Siyaya Digital" class="nav__logo-mark">SIYAYA DIGITAL</a>
+    <div class="nav__links">
+      <a class="nav__link" href="/">Home</a>
+      <a class="nav__link" href="/lumio/privacy">Privacy</a>
+      <a class="nav__link" href="/impressum">Impressum</a>
+      <a class="nav__cta" href="#pricing">Get Lumio</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="lumio-hero">
+  <div class="container">
+    <div class="lumio-hero__inner">
+      <div class="lumio-icon">🔦</div>
+      <h1>Lumio — Flashlight.<br><em>Clean, fast, private.</em></h1>
+      <p class="lumio-hero__sub">
+        A torch app the way it should be. No ads. No tracking. No account.
+        Just a fast, reliable flashlight that works completely offline.
+      </p>
+      <div class="lumio-badges">
+        <span class="lumio-badge">🔒 Zero data collected</span>
+        <span class="lumio-badge">📵 100% offline</span>
+        <span class="lumio-badge">💶 €0.99 once, forever</span>
+        <span class="lumio-badge">🏠 Home screen widget</span>
+      </div>
+      <div class="lumio-hero__ctas">
+        <a class="btn btn--gold" href="#pricing">Download on App Store</a>
+        <a class="btn btn--ghost-white" href="/lumio/privacy">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <div class="container">
+    <span class="eyebrow" style="color:var(--g400);">What Lumio does</span>
+    <h2 style="color:var(--text);margin-bottom:10px;">Everything you need.<br>Nothing you don't.</h2>
+    <p style="margin-bottom:44px;">Six features. One clear purpose. Built to work first time, every time.</p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🔦</div>
+        <div class="feature-title">Torch with brightness control</div>
+        <div class="feature-text">Full LED brightness control with a smooth slider. Tap once to turn on, tap again to turn off. Fast, responsive, reliable.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <div class="feature-title">Strobe mode</div>
+        <div class="feature-text">Adjustable strobe frequency for signalling. Clear epilepsy warning built into the UI. Used responsibly for emergencies and signalling.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🆘</div>
+        <div class="feature-title">SOS emergency signal</div>
+        <div class="feature-text">International Morse code distress signal (···−−−···). An emergency signalling aid — always contact emergency services directly.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🖥️</div>
+        <div class="feature-title">Screen light with colour options</div>
+        <div class="feature-text">Use your screen as a soft light source. Choose from white, warm, and colour options for different environments.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏠</div>
+        <div class="feature-title">Home screen widget</div>
+        <div class="feature-text">One-tap torch toggle directly from your home screen. No need to open the app — just tap and illuminate.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <div class="feature-title">Lock screen shortcut</div>
+        <div class="feature-text">Access Lumio directly from the iPhone lock screen for instant torch activation — even when your phone is locked.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVACY -->
+<section class="privacy-strip">
+  <div class="container">
+    <div class="privacy-strip__inner">
+      <div>
+        <span class="eyebrow">Why we're different</span>
+        <h2>The torch app that actually <em>just</em> does torch.</h2>
+        <p class="privacy-strip__sub">
+          Most flashlight apps in the App Store are monetised through ads and tracking.
+          They ask for more permissions than a torch could ever need.
+          Lumio is architecturally incapable of any of that.
+        </p>
+        <div class="privacy-points">
+          <div class="pp">
+            <div class="pp__icon">📵</div>
+            <div><div class="pp__title">No internet connection, ever</div>
+            <div class="pp__text">Lumio is 100% offline. It never makes a network request.</div></div>
+          </div>
+          <div class="pp">
+            <div class="pp__icon">🚫</div>
+            <div><div class="pp__title">One permission only — torch</div>
+            <div class="pp__text">Camera access to control the LED flash. Nothing else requested, nothing else used.</div></div>
+          </div>
+          <div class="pp">
+            <div class="pp__icon">🗑️</div>
+            <div><div class="pp__title">Delete app = delete everything</div>
+            <div class="pp__text">The only data stored is your local preferences. Deleting the app removes it entirely.</div></div>
+          </div>
+        </div>
+      </div>
+      <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-lg);overflow:hidden;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid rgba(255,255,255,.08);">
+          <div style="padding:13px 18px;font-size:0.68rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.3);">Other torch apps</div>
+          <div style="padding:13px 18px;font-size:0.68rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--g300);border-left:1px solid rgba(255,255,255,.08);">Lumio</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid rgba(255,255,255,.05);"><div style="padding:11px 18px;font-size:0.82rem;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:7px;"><span style="color:#e57373;">✗</span>Ads between uses</div><div style="padding:11px 18px;font-size:0.82rem;color:rgba(255,255,255,.85);display:flex;align-items:center;gap:7px;border-left:1px solid rgba(255,255,255,.05);"><span style="color:var(--g300);">✓</span>No ads, ever</div></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid rgba(255,255,255,.05);"><div style="padding:11px 18px;font-size:0.82rem;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:7px;"><span style="color:#e57373;">✗</span>Analytics SDKs</div><div style="padding:11px 18px;font-size:0.82rem;color:rgba(255,255,255,.85);display:flex;align-items:center;gap:7px;border-left:1px solid rgba(255,255,255,.05);"><span style="color:var(--g300);">✓</span>Zero SDKs</div></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid rgba(255,255,255,.05);"><div style="padding:11px 18px;font-size:0.82rem;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:7px;"><span style="color:#e57373;">✗</span>Location permission</div><div style="padding:11px 18px;font-size:0.82rem;color:rgba(255,255,255,.85);display:flex;align-items:center;gap:7px;border-left:1px solid rgba(255,255,255,.05);"><span style="color:var(--g300);">✓</span>Torch only</div></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid rgba(255,255,255,.05);"><div style="padding:11px 18px;font-size:0.82rem;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:7px;"><span style="color:#e57373;">✗</span>Monthly subscription</div><div style="padding:11px 18px;font-size:0.82rem;color:rgba(255,255,255,.85);display:flex;align-items:center;gap:7px;border-left:1px solid rgba(255,255,255,.05);"><span style="color:var(--g300);">✓</span>€0.99 once</div></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;"><div style="padding:11px 18px;font-size:0.82rem;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:7px;"><span style="color:#e57373;">✗</span>Data sent to servers</div><div style="padding:11px 18px;font-size:0.82rem;color:rgba(255,255,255,.85);display:flex;align-items:center;gap:7px;border-left:1px solid rgba(255,255,255,.05);"><span style="color:var(--g300);">✓</span>100% offline</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <span class="eyebrow" style="color:var(--g400);">Pricing</span>
+    <h2 style="color:var(--text);margin-bottom:44px;">One price. No tricks.</h2>
+    <div class="pricing-card">
+      <div class="price-badge">One-time purchase</div>
+      <div class="price-amount">€0.99</div>
+      <div class="price-period">Yours forever. All future updates included.</div>
+      <div class="price-features">
+        <div class="price-feature"><span class="check">✓</span>Torch with brightness control</div>
+        <div class="price-feature"><span class="check">✓</span>Strobe mode</div>
+        <div class="price-feature"><span class="check">✓</span>SOS emergency signal</div>
+        <div class="price-feature"><span class="check">✓</span>Screen light with colour options</div>
+        <div class="price-feature"><span class="check">✓</span>Home screen widget</div>
+        <div class="price-feature"><span class="check">✓</span>Lock screen shortcut</div>
+        <div class="price-feature"><span class="check">✓</span>Zero ads, zero tracking</div>
+        <div class="price-feature"><span class="check">✓</span>Works 100% offline</div>
+      </div>
+      <a class="btn btn--primary" href="#" style="width:100%;justify-content:center;">
+        Coming soon to App Store
+      </a>
+      <p style="font-size:0.72rem;color:var(--text-faint);margin-top:12px;">
+        One-time purchase via Apple. Restore anytime on any device with the same Apple ID.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORT -->
+<section class="support">
+  <div class="container">
+    <div class="support-card">
+      <div>
+        <h3>Need help with Lumio?</h3>
+        <p>A real person reads and responds to every support email — usually within 48 hours.</p>
+      </div>
+      <a class="btn btn--primary" href="mailto:legal@siyaya-digital.com">
+        📧 &nbsp;Email support
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__logo"><img src="/public/logo.png" alt="Siyaya Digital" style="width:28px;height:28px;object-fit:contain;vertical-align:middle;margin-right:8px;">SIYAYA DIGITAL</div>
+  <div class="footer__tagline">Lumio — Clean, fast, private flashlight for iPhone</div>
+  <div class="footer__links">
+    <a class="footer__link" href="/">Home</a>
+    <a class="footer__link" href="/lumio/privacy">Privacy Policy</a>
+    <a class="footer__link" href="/lumio/terms">Terms of Use</a>
+    <a class="footer__link" href="/lumio/disclaimer">Disclaimer</a>
+    <a class="footer__link" href="/lumio/deletion">Data Deletion</a>
+    <a class="footer__link" href="/impressum">Impressum</a>
+    <a class="footer__link" href="/contact">Contact</a>
+  </div>
+  <div class="footer__copy">© 2026 IP Strategy UG · Ilya Piontek · Neuss, Germany</div>
+</footer>
+
+</body>
+</html>
