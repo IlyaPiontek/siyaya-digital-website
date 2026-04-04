@@ -244,21 +244,15 @@ p  { color: var(--text-light); }
   .impressum-grid { grid-template-columns:1fr; }
 }
 
-/* ── Icon set SVGs ── */
-.feature-icon svg,
-.pillar__icon svg,
-.pillar__icon img {
-  width: 36px;
-  height: 36px;
-}
+/* ── Web icons ── */
 .feature-icon {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 12px;
+  height: 52px;
 }
-.pillar__icon {
-  display: flex;
-  align-items: center;
-  margin-bottom: 14px;
+.feature-icon svg {
+  width: 48px;
+  height: 48px;
 }
