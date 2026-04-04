@@ -243,3 +243,22 @@ p  { color: var(--text-light); }
   .legal-clause { padding:20px 18px; }
   .impressum-grid { grid-template-columns:1fr; }
 }
+
+/* ── Icon set SVGs ── */
+.feature-icon svg,
+.pillar__icon svg,
+.pillar__icon img {
+  width: 36px;
+  height: 36px;
+}
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+.pillar__icon {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
