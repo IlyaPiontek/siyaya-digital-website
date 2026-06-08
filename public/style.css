@@ -262,7 +262,11 @@ p  { color: var(--ink-soft); }
 
 /* ── Responsive ── */
 @media(max-width:768px){
-  .nav__links .nav__link { display:none; }
+  .nav { height:auto; }
+  .nav__inner { flex-wrap:wrap; row-gap:10px; padding-top:12px; padding-bottom:12px; }
+  .nav__links { flex:1 1 100%; gap:8px 16px; flex-wrap:wrap; justify-content:flex-start; }
+  .nav__link { font-size:0.85rem; }
+  .nav__cta { margin-left:auto; }
   .legal-hero { padding:30px 24px; }
   .legal-clause { padding:22px 20px; }
   .impressum-grid { grid-template-columns:1fr; }

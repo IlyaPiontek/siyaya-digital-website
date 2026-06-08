@@ -108,6 +108,16 @@
     .iv-pill.aktiv::before { background:#1f9d54; }
     .iv-pill.check { background:#f0f3ee; color:#6b7a5f; }
     .iv-pill.check::before { background:#a8b39a; }
+
+    /* ── small-screen mockup reflow ── */
+    @media(max-width:560px){
+      .ib-side { width:94px; padding:12px 9px; }
+      .ib-logo { font-size:9.5px; gap:5px; }
+      .ib-main { padding:12px 12px; }
+      .ib-h { font-size:14px; }
+      .ib-stats { grid-template-columns:repeat(2,1fr); }
+      .iv { padding:16px 12px; }
+    }
   </style>
 </head>
 <body>
