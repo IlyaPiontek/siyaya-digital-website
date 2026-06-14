@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free tools & games — Siyaya Digital</title>
+  <meta name="description" content="Free tools and games from Siyaya Digital — little things we build for fun. No sign-up, no tracking, nothing to install. Just open and play.">
+  <link rel="icon" href="/public/logo.png">
+  <link rel="stylesheet" href="/public/style.css">
+  <style>
+    /* ── hero ── */
+    .free-hero { padding:80px 0 40px; text-align:center; }
+    .free-hero .eyebrow { justify-content:center; }
+    .free-hero h1 { font-family:'Fraunces',serif; font-weight:380; font-size:clamp(2.6rem,6vw,4.2rem); line-height:1; letter-spacing:-0.035em; margin:0 auto 22px; max-width:16ch; }
+    .free-hero h1 em { font-style:italic; color:var(--accent); }
+    .free-hero__sub { font-size:clamp(1.05rem,1.8vw,1.2rem); color:var(--ink-soft); max-width:54ch; margin:0 auto; }
+
+    /* ── card grid ── */
+    .free-section { padding:30px 0 96px; }
+    .free-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:20px; }
+    .free-card { display:flex; gap:18px; align-items:flex-start; background:var(--card-bg); border:1px solid var(--line); border-radius:20px; padding:22px 24px; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+    .free-card:hover { transform:translateY(-3px); box-shadow:var(--shadow-md); border-color:var(--accent-soft); }
+    .free-card__icon { width:84px; height:84px; border-radius:20px; flex-shrink:0; box-shadow:0 10px 24px -10px rgba(28,27,24,.4); }
+    .free-card__body { min-width:0; }
+    .free-card__head { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:9px; }
+    .free-card__head h3 { font-family:'Fraunces',serif; font-weight:440; font-size:1.5rem; letter-spacing:-0.02em; }
+    .free-tag { font-size:0.72rem; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--accent); background:var(--g50); border:1px solid var(--line); border-radius:99px; padding:3px 10px; }
+    .free-card p { color:var(--ink-soft); font-size:0.97rem; line-height:1.65; }
+    .free-play { font-weight:600; color:var(--accent); text-decoration:none; white-space:nowrap; }
+    .free-play:hover { text-decoration:underline; }
+    .free-note { text-align:center; color:var(--text-faint); font-size:0.92rem; margin-top:34px; }
+    @media(max-width:560px){ .free-card { flex-direction:column; } .free-card__icon { width:72px; height:72px; } }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="/"><img src="/public/logo.png" alt="Siyaya Digital" class="nav__logo-mark">SIYAYA DIGITAL</a>
+    <div class="nav__links">
+      <a class="nav__link" href="/">Home</a>
+      <a class="nav__link" href="/steelx">Steel X</a>
+      <a class="nav__link" href="/saas">SaaS</a>
+      <a class="nav__link" href="/free">Free</a>
+      <a class="nav__link" href="/impressum">Impressum</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="free-hero">
+  <div class="container">
+    <span class="eyebrow">Free &amp; for fun · no catch</span>
+    <h1>Free tools &amp; <em>games.</em></h1>
+    <p class="free-hero__sub">A little corner for the things we build purely for the fun of it. No sign-up, no tracking, nothing to install — just open one and go.</p>
+  </div>
+</header>
+
+<!-- ITEMS -->
+<section class="free-section">
+  <div class="container">
+    <div class="free-grid">
+
+      <!-- SoccerX -->
+      <article class="free-card">
+        <img class="free-card__icon" src="/public/soccerx-icon.png" alt="SoccerX app icon" width="84" height="84">
+        <div class="free-card__body">
+          <div class="free-card__head">
+            <h3>SoccerX</h3>
+            <span class="free-tag">Game · 2 players</span>
+          </div>
+          <p>A fast top-down penalty duel. Drag the ball back, aim, and release to fire it into the glowing goal — then pass the phone and let your opponent try to beat your shot. Pure pick-up-and-play, right in your browser. <a class="free-play" href="/free/penalty-duel" target="_blank" rel="noopener">Play now →</a></p>
+        </div>
+      </article>
+
+    </div>
+    <p class="free-note">More little tools and games will land here over time.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__logo">SIYAYA DIGITAL</div>
+  <div class="footer__tagline">Simple software, built with care · Neuss, Germany</div>
+  <div class="footer__links">
+    <a class="footer__link" href="/">Home</a>
+    <a class="footer__link" href="/steelx">Steel X</a>
+    <a class="footer__link" href="/saas">SaaS</a>
+    <a class="footer__link" href="/free">Free</a>
+    <a class="footer__link" href="/privacy">Privacy Policy</a>
+    <a class="footer__link" href="/terms">Terms of Use</a>
+    <a class="footer__link" href="/impressum">Impressum</a>
+    <a class="footer__link" href="mailto:legal@siyaya-digital.com">Contact</a>
+  </div>
+  <div class="footer__copy">© 2026 IP Strategy UG · Ilya Piontek · Neuss, Germany</div>
+</footer>
+
+</body>
+</html>

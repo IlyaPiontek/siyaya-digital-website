@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Software as a Service — Siyaya Digital</title>
-  <meta name="description" content="Web platforms by Siyaya Digital — Immobilien Butler and immo-verwalter.io. Property management software made for Germany.">
+  <meta name="description" content="Web platforms by Siyaya Digital — Immobilien Butler, immo-verwalter, CertX and SteelX. Purpose-built tools for property management, ISO quality auditing and steel inventory.">
   <link rel="icon" href="/public/logo.png">
   <link rel="stylesheet" href="/public/style.css">
   <style>
@@ -109,6 +109,58 @@
     .iv-pill.check { background:#f0f3ee; color:#6b7a5f; }
     .iv-pill.check::before { background:#a8b39a; }
 
+    /* ── Mockup 3 · CertX ── */
+    .cx { --cx:#16a34a; display:flex; font-size:11px; background:#f4f5f6; min-height:320px; font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace; }
+    .cx-view { flex:1; min-width:0; display:flex; flex-direction:column; }
+    .cx-view__bar { display:flex; align-items:center; gap:7px; padding:9px 12px; border-bottom:1px solid #e3e6e8; background:#fff; }
+    .cx-view__logo { display:flex; align-items:center; gap:6px; font-weight:700; font-size:11px; color:#101413; letter-spacing:.06em; }
+    .cx-view__logo .c { width:16px; height:16px; border-radius:5px; border:1.6px solid var(--cx); color:var(--cx); display:grid; place-items:center; font-size:9px; }
+    .cx-view__org { margin-left:auto; font-size:8px; color:#9aa3a0; white-space:nowrap; }
+    .cx-draw { position:relative; flex:1; background:#fff; margin:10px; border:1px solid #e3e6e8; border-radius:8px; overflow:hidden; }
+    .cx-draw svg { position:absolute; inset:0; width:100%; height:100%; }
+    .cx-balloon { position:absolute; width:15px; height:15px; transform:translate(-50%,-50%); border-radius:50%; background:var(--cx); color:#fff; font-size:8px; font-weight:700; display:grid; place-items:center; box-shadow:0 1px 3px rgba(22,163,74,.45); }
+    .cx-balloon.r { background:#e24b4a; box-shadow:0 1px 3px rgba(226,75,74,.4); }
+    .cx-side { width:170px; flex-shrink:0; background:#fff; border-left:1px solid #e3e6e8; display:flex; flex-direction:column; }
+    .cx-side__top { padding:12px 12px 10px; border-bottom:1px solid #eef1f2; }
+    .cx-side__h { font-weight:700; font-size:10.5px; color:#101413; letter-spacing:.04em; }
+    .cx-side__id { font-size:8px; color:#9aa3a0; margin-top:3px; }
+    .cx-btns { display:flex; gap:6px; padding:10px 12px 8px; }
+    .cx-btn { flex:1; text-align:center; font-size:8px; font-weight:700; border-radius:6px; padding:8px 4px; line-height:1.25; }
+    .cx-btn.pri { background:var(--cx); color:#fff; }
+    .cx-btn.sec { background:#fff; color:#3a423f; border:1px solid #dfe3e4; }
+    .cx-meta { padding:0 12px 9px; font-size:8px; color:#7c8581; }
+    .cx-grp { display:flex; align-items:center; gap:6px; padding:7px 12px; font-size:8px; font-weight:700; letter-spacing:.05em; color:#3a423f; border-top:1px solid #eef1f2; }
+    .cx-grp .dot { width:6px; height:6px; border-radius:50%; background:var(--cx); flex-shrink:0; }
+    .cx-grp .dot.g { background:#c2c8c5; }
+    .cx-row { display:flex; align-items:center; gap:9px; padding:6px 12px; font-size:9px; border-top:1px solid #f4f6f6; }
+    .cx-row .n { color:#b6bdba; width:13px; flex-shrink:0; }
+    .cx-row .t { flex:1; color:#101413; }
+    .cx-row .v { color:#3a423f; }
+
+    /* ── Mockup 4 · SteelX ── */
+    .sx { --sx:#16a34a; --cand:#e0922a; display:flex; font-size:11px; background:#0c1511; min-height:320px; color:#cdd6d1; }
+    .sx-side { width:100px; flex-shrink:0; background:#0a120e; border-right:1px solid rgba(255,255,255,.06); padding:12px 10px; }
+    .sx-logo { display:flex; align-items:center; gap:6px; font-weight:700; font-size:11px; color:#fff; }
+    .sx-logo .m { width:18px; height:18px; border-radius:6px; background:var(--sx); color:#08110c; display:grid; place-items:center; font-size:9px; font-weight:800; flex-shrink:0; }
+    .sx-org { font-size:7px; color:#6f7d76; margin:3px 0 14px; }
+    .sx-nav { font-size:8.5px; color:#8a978f; padding:5px 7px; border-radius:6px; margin-bottom:2px; }
+    .sx-nav.on { background:rgba(22,163,74,.16); color:#63e39c; font-weight:600; }
+    .sx-main { flex:1; min-width:0; padding:13px 14px; display:flex; flex-direction:column; }
+    .sx-h { font-weight:700; font-size:14px; color:#fff; }
+    .sx-sub { font-size:8px; color:#7e8b84; margin:3px 0 10px; line-height:1.4; }
+    .sx-scanbtn { align-self:flex-start; font-size:8.5px; font-weight:700; color:var(--sx); border:1px solid rgba(22,163,74,.45); border-radius:6px; padding:5px 11px; margin-bottom:11px; }
+    .sx-bundle { flex:1; border-radius:10px; background:#070d0a; padding:12px; display:flex; flex-wrap:wrap; gap:5px; align-content:center; justify-content:center; }
+    .sx-bundle i { width:21px; height:21px; border-radius:50%; border:2px solid #8a948c; display:grid; place-items:center; font-size:8px; font-weight:700; color:#fff; box-shadow:inset 0 0 0 3px rgba(22,163,74,.9); }
+    .sx-bundle i::after { content:attr(data-n); }
+    .sx-bundle i.cand { border-style:dashed; border-color:var(--cand); box-shadow:none; }
+    .sx-bundle i.cand::after { content:""; }
+    .sx-legend { display:flex; flex-wrap:wrap; gap:11px; margin-top:9px; font-size:7.5px; color:#7e8b84; }
+    .sx-legend span { display:inline-flex; align-items:center; gap:4px; }
+    .sx-legend .d { width:8px; height:8px; border-radius:50%; }
+    .sx-legend .d.det { background:var(--sx); }
+    .sx-legend .d.cand { border:1.5px dashed var(--cand); }
+    .sx-legend .d.add { background:#63e39c; }
+
     /* ── small-screen mockup reflow ── */
     @media(max-width:560px){
       .ib-side { width:94px; padding:12px 9px; }
@@ -117,6 +169,9 @@
       .ib-h { font-size:14px; }
       .ib-stats { grid-template-columns:repeat(2,1fr); }
       .iv { padding:16px 12px; }
+      .cx-side { width:140px; }
+      .sx-side { width:86px; }
+      .sx-h { font-size:13px; }
     }
   </style>
 </head>
@@ -129,6 +184,7 @@
       <a class="nav__link" href="/">Home</a>
       <a class="nav__link" href="/steelx">Steel X</a>
       <a class="nav__link" href="/saas">SaaS</a>
+      <a class="nav__link" href="/free">Free</a>
       <a class="nav__link" href="/impressum">Impressum</a>
     </div>
   </div>
@@ -139,7 +195,7 @@
   <div class="container">
     <span class="eyebrow">Web platforms</span>
     <h1>Software as a <em>Service.</em></h1>
-    <p class="saas-hero__sub">Beyond apps, we build focused web platforms for the German property market — clean tools that take the busywork out of being a landlord.</p>
+    <p class="saas-hero__sub">Beyond apps, we build focused web platforms — clean, purpose-built tools that take the busywork out of property management, quality auditing and inventory counting.</p>
   </div>
 </header>
 
@@ -262,6 +318,143 @@
                 <div class="iv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M3 11h18M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div>
                 <div class="iv-rt"><div class="t">Briefkästen</div><div class="s">7 von 8 Schildern aktuell</div></div>
                 <span class="iv-pill check">prüfen</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CertX -->
+    <div class="saas-feature">
+      <div class="saas-feature__text">
+        <span class="eyebrow">Quality & ISO auditing</span>
+        <h2>CertX</h2>
+        <div class="saas-feature__domain">certx.app</div>
+        <p>CertX reads your technical drawings and extracts every inspection characteristic — dimensions, tolerances, threads and surfaces — then builds an audit-ready ISO inspection sheet. Minutes, not hours.</p>
+        <div class="saas-tags">
+          <span class="saas-tag">Technical drawings</span>
+          <span class="saas-tag">Audit points</span>
+          <span class="saas-tag">Tolerances</span>
+          <span class="saas-tag">ISO</span>
+          <span class="saas-tag">Quality control</span>
+        </div>
+        <a class="btn btn--primary" href="https://certx.app" target="_blank" rel="noopener">Visit certx.app →</a>
+      </div>
+
+      <div class="saas-stage">
+        <div class="browser">
+          <div class="bw-bar">
+            <div class="bw-dots"><span class="bw-dot" style="background:#ff5f57"></span><span class="bw-dot" style="background:#febc2e"></span><span class="bw-dot" style="background:#28c840"></span></div>
+            <div class="bw-url">app.certx.app/workspace</div>
+          </div>
+          <div class="cx">
+            <div class="cx-view">
+              <div class="cx-view__bar">
+                <div class="cx-view__logo"><span class="c">✓</span>Cert X</div>
+                <div class="cx-view__org">Muster GmbH</div>
+              </div>
+              <div class="cx-draw">
+                <svg viewBox="0 0 240 180" fill="none" preserveAspectRatio="xMidYMid meet">
+                  <g stroke="#1c2433" stroke-width="1.1">
+                    <circle cx="98" cy="92" r="54"/>
+                    <circle cx="98" cy="92" r="41"/>
+                    <circle cx="98" cy="92" r="15"/>
+                    <ellipse cx="98" cy="56" rx="6" ry="11"/>
+                    <ellipse cx="129" cy="110" rx="6" ry="11" transform="rotate(60 129 110)"/>
+                    <ellipse cx="67" cy="110" rx="6" ry="11" transform="rotate(-60 67 110)"/>
+                    <circle cx="190" cy="44" r="14" stroke-dasharray="3 2"/>
+                  </g>
+                  <g stroke="#c2c8c5" stroke-width="0.7" stroke-dasharray="5 3">
+                    <line x1="98" y1="30" x2="98" y2="154"/>
+                    <line x1="38" y1="92" x2="158" y2="92"/>
+                  </g>
+                  <g stroke="#9aa3a0" stroke-width="0.8">
+                    <line x1="46" y1="162" x2="150" y2="162"/>
+                  </g>
+                  <text x="84" y="159" fill="#5f6764" font-size="8" font-family="monospace">Ø102</text>
+                  <text x="172" y="22" fill="#5f6764" font-size="7.5" font-family="monospace">DETAIL A</text>
+                </svg>
+                <span class="cx-balloon" style="left:41%;top:18%">4</span>
+                <span class="cx-balloon" style="left:23%;top:40%">5</span>
+                <span class="cx-balloon" style="left:19%;top:64%">6</span>
+                <span class="cx-balloon" style="left:41%;top:80%">7</span>
+                <span class="cx-balloon" style="left:60%;top:52%">1</span>
+                <span class="cx-balloon r" style="left:66%;top:74%">12</span>
+              </div>
+            </div>
+            <aside class="cx-side">
+              <div class="cx-side__top">
+                <div class="cx-side__h">PLANETARY RETAINER RING</div>
+                <div class="cx-side__id">208357 · extracted</div>
+              </div>
+              <div class="cx-btns">
+                <span class="cx-btn pri">Merkmale extrahieren</span>
+                <span class="cx-btn sec">Protokoll erstellen</span>
+              </div>
+              <div class="cx-meta">16 Merkmale · 84% confidence</div>
+              <div class="cx-grp"><span class="dot g"></span>INFOBLOCK · 1</div>
+              <div class="cx-row"><span class="n">16</span><span class="t">ITEM MASS 0,178 kg</span><span class="v">0.178</span></div>
+              <div class="cx-grp"><span class="dot"></span>DIMENSIONEN · 11</div>
+              <div class="cx-row"><span class="n">1</span><span class="t">Ø102</span><span class="v">102</span></div>
+              <div class="cx-row"><span class="n">2</span><span class="t">(Ø139)</span><span class="v">139</span></div>
+              <div class="cx-row"><span class="n">3</span><span class="t">Ø150</span><span class="v">150</span></div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SteelX -->
+    <div class="saas-feature saas-feature--rev">
+      <div class="saas-feature__text">
+        <span class="eyebrow">Inventory & counting</span>
+        <h2>SteelX</h2>
+        <div class="saas-feature__domain">steelx.app</div>
+        <p>The web version of our SteelX iOS app. Photograph a bundle of steel tubes and it counts them automatically — detecting each tube, flagging the doubtful ones to confirm and linking the count straight to your inventory. No more tallying by hand.</p>
+        <div class="saas-tags">
+          <span class="saas-tag">Automated counting</span>
+          <span class="saas-tag">Steel tubes</span>
+          <span class="saas-tag">Inventory</span>
+          <span class="saas-tag">Bundle scan</span>
+          <span class="saas-tag">iOS & web</span>
+        </div>
+        <a class="btn btn--primary" href="https://steelx.app" target="_blank" rel="noopener">Visit steelx.app →</a>
+      </div>
+
+      <div class="saas-stage">
+        <div class="browser browser--alt">
+          <div class="bw-bar">
+            <div class="bw-dots"><span class="bw-dot" style="background:#ff5f57"></span><span class="bw-dot" style="background:#febc2e"></span><span class="bw-dot" style="background:#28c840"></span></div>
+            <div class="bw-url">app.steelx.app/free-count</div>
+          </div>
+          <div class="sx">
+            <aside class="sx-side">
+              <div class="sx-logo"><span class="m">S</span>SteelX</div>
+              <div class="sx-org">Stahl Muster GmbH</div>
+              <div class="sx-nav on">Counting</div>
+              <div class="sx-nav">Counts</div>
+              <div class="sx-nav">Inventory</div>
+              <div class="sx-nav">Members</div>
+              <div class="sx-nav">Settings</div>
+            </aside>
+            <div class="sx-main">
+              <div class="sx-h">Free Count</div>
+              <div class="sx-sub">Photograph any bundle — detected tubes are counted automatically, candidates flagged for review.</div>
+              <span class="sx-scanbtn">Scan label</span>
+              <div class="sx-bundle">
+                <i data-n="1"></i><i data-n="2"></i><i data-n="3"></i><i data-n="4"></i><i data-n="5"></i><i data-n="6"></i>
+                <i data-n="7"></i><i data-n="8"></i><i class="cand"></i><i data-n="9"></i><i data-n="10"></i><i data-n="11"></i>
+                <i data-n="12"></i><i data-n="13"></i><i data-n="14"></i><i class="cand"></i><i data-n="15"></i><i data-n="16"></i>
+                <i data-n="17"></i><i data-n="18"></i><i data-n="19"></i><i data-n="20"></i><i data-n="21"></i><i class="cand"></i>
+                <i data-n="22"></i><i data-n="23"></i><i data-n="24"></i><i data-n="25"></i><i data-n="26"></i><i data-n="27"></i>
+                <i class="cand"></i><i data-n="28"></i><i data-n="29"></i><i data-n="30"></i><i data-n="31"></i><i data-n="32"></i>
+              </div>
+              <div class="sx-legend">
+                <span><span class="d det"></span>detected</span>
+                <span><span class="d cand"></span>candidate</span>
+                <span><span class="d add"></span>added</span>
+                <span>✕ removed</span>
               </div>
             </div>
           </div>
