@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Steel X — Tube Inventory & Counting App</title>
-  <meta name="description" content="Steel X is a professional steel tube counting, measurement and inventory app for iPhone. AI counting, OD/ID measurement, Excel export. One-time purchase.">
+  <meta name="description" content="Steel X is a professional steel tube counting, measurement and inventory app for iPhone. AI counting, OD/ID measurement, Excel export. Free to start, Pro from 9,99 €/year.">
   <link rel="icon" href="/public/logo.png">
   <link rel="stylesheet" href="/public/style.css">
   <style>
@@ -63,6 +63,16 @@
     .sx-price-badge { font-size:0.72rem; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--accent); margin-bottom:16px; }
     .sx-price { font-family:'Fraunces',serif; font-weight:400; font-size:3.4rem; color:var(--accent); line-height:1; }
     .sx-price-period { font-size:0.92rem; color:var(--ink-soft); margin-bottom:30px; }
+
+    /* plan tiles */
+    .sx-plans { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:30px; }
+    @media(max-width:480px){ .sx-plans{ grid-template-columns:1fr; } }
+    .sx-plan { position:relative; border:1.5px solid var(--line); border-radius:var(--r-lg); padding:22px 20px; background:var(--card-bg); }
+    .sx-plan--best { border-color:var(--accent); }
+    .sx-plan__flag { position:absolute; top:-11px; left:20px; font-size:0.62rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#fff; background:var(--accent); padding:4px 10px; border-radius:100px; }
+    .sx-plan__name { font-family:'Fraunces',serif; font-weight:440; font-size:1.25rem; color:var(--ink); margin-bottom:6px; }
+    .sx-plan__price { font-size:1rem; color:var(--ink-soft); }
+    .sx-plan__price strong { font-weight:600; color:var(--ink); }
     .sx-features-list { margin-bottom:30px; }
     .sx-feature-item { display:flex; align-items:flex-start; gap:11px; padding:10px 0; border-bottom:1px solid var(--line); font-size:0.92rem; color:var(--ink-soft); }
     .sx-feature-item:last-child { border-bottom:none; }
@@ -98,7 +108,7 @@
       <h1>Steel X<br><em>Tube inventory, counted.</em></h1>
       <p class="sx-hero__sub">
         AI tube counting, OD/ID measurement, label scanning and Excel export.
-        Built for steel professionals. 100% offline. One-time purchase.
+        Built for steel professionals. 100% offline. Free to start.
       </p>
       <div class="sx-tags">
         <span class="sx-tag">AI tube counting</span>
@@ -169,11 +179,21 @@
 <section class="sx-section sx-pricing" id="pricing">
   <div class="container">
     <span class="eyebrow">Pricing</span>
-    <h2 style="margin:0 auto 44px;max-width:none;">One price. Yours forever.</h2>
+    <h2 style="margin:0 auto 44px;max-width:none;">Unlock Steel X Pro.</h2>
     <div class="sx-pricing-card">
-      <div class="sx-price-badge">One-time purchase</div>
-      <div class="sx-price">3,99 €</div>
-      <div class="sx-price-period">Yours forever. All future updates included.</div>
+      <div class="sx-price-badge">Steel X Pro subscription</div>
+      <div class="sx-plans">
+        <div class="sx-plan sx-plan--best">
+          <span class="sx-plan__flag">Best value</span>
+          <div class="sx-plan__name">Yearly</div>
+          <div class="sx-plan__price"><strong>9,99 €</strong> / year</div>
+        </div>
+        <div class="sx-plan">
+          <div class="sx-plan__name">Monthly</div>
+          <div class="sx-plan__price"><strong>3,99 €</strong> / month</div>
+        </div>
+      </div>
+      <div class="sx-price-period">Measure &amp; Weight Calculator stay free, always.</div>
       <div class="sx-features-list">
         <div class="sx-feature-item"><span class="sx-check">✓</span>AI tube counting with confidence %</div>
         <div class="sx-feature-item"><span class="sx-check">✓</span>OD/ID/WT on-screen measurement</div>
@@ -188,7 +208,7 @@
       </div>
       <a class="btn btn--primary" href="https://apps.apple.com/de/app/steelx/id6761762422?l=en-GB" target="_blank" rel="noopener" style="width:100%;justify-content:center;">Available on the App Store</a>
       <p style="font-size:0.78rem;color:var(--text-faint);margin-top:14px;">
-        One-time purchase via Apple. Restore anytime on any device with the same Apple ID.
+        Subscription via Apple. Restore purchases anytime on any device with the same Apple ID.
       </p>
     </div>
   </div>
