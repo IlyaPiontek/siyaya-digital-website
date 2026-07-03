@@ -112,34 +112,6 @@
     .iv-pill.check { background:#f0f3ee; color:#6b7a5f; }
     .iv-pill.check::before { background:#a8b39a; }
 
-    /* ── Mockup 3 · CertX ── */
-    .cx { --cx:#16a34a; display:flex; font-size:11px; background:#f4f5f6; min-height:320px; font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace; }
-    .cx-view { flex:1; min-width:0; display:flex; flex-direction:column; }
-    .cx-view__bar { display:flex; align-items:center; gap:7px; padding:9px 12px; border-bottom:1px solid #e3e6e8; background:#fff; }
-    .cx-view__logo { display:flex; align-items:center; gap:6px; font-weight:700; font-size:11px; color:#101413; letter-spacing:.06em; }
-    .cx-view__logo .c { width:16px; height:16px; border-radius:5px; border:1.6px solid var(--cx); color:var(--cx); display:grid; place-items:center; font-size:9px; }
-    .cx-view__org { margin-left:auto; font-size:8px; color:#9aa3a0; white-space:nowrap; }
-    .cx-draw { position:relative; flex:1; background:#fff; margin:10px; border:1px solid #e3e6e8; border-radius:8px; overflow:hidden; }
-    .cx-draw svg { position:absolute; inset:0; width:100%; height:100%; }
-    .cx-balloon { position:absolute; width:15px; height:15px; transform:translate(-50%,-50%); border-radius:50%; background:var(--cx); color:#fff; font-size:8px; font-weight:700; display:grid; place-items:center; box-shadow:0 1px 3px rgba(22,163,74,.45); }
-    .cx-balloon.r { background:#e24b4a; box-shadow:0 1px 3px rgba(226,75,74,.4); }
-    .cx-side { width:170px; flex-shrink:0; background:#fff; border-left:1px solid #e3e6e8; display:flex; flex-direction:column; }
-    .cx-side__top { padding:12px 12px 10px; border-bottom:1px solid #eef1f2; }
-    .cx-side__h { font-weight:700; font-size:10.5px; color:#101413; letter-spacing:.04em; }
-    .cx-side__id { font-size:8px; color:#9aa3a0; margin-top:3px; }
-    .cx-btns { display:flex; gap:6px; padding:10px 12px 8px; }
-    .cx-btn { flex:1; text-align:center; font-size:8px; font-weight:700; border-radius:6px; padding:8px 4px; line-height:1.25; }
-    .cx-btn.pri { background:var(--cx); color:#fff; }
-    .cx-btn.sec { background:#fff; color:#3a423f; border:1px solid #dfe3e4; }
-    .cx-meta { padding:0 12px 9px; font-size:8px; color:#7c8581; }
-    .cx-grp { display:flex; align-items:center; gap:6px; padding:7px 12px; font-size:8px; font-weight:700; letter-spacing:.05em; color:#3a423f; border-top:1px solid #eef1f2; }
-    .cx-grp .dot { width:6px; height:6px; border-radius:50%; background:var(--cx); flex-shrink:0; }
-    .cx-grp .dot.g { background:#c2c8c5; }
-    .cx-row { display:flex; align-items:center; gap:9px; padding:6px 12px; font-size:9px; border-top:1px solid #f4f6f6; }
-    .cx-row .n { color:#b6bdba; width:13px; flex-shrink:0; }
-    .cx-row .t { flex:1; color:#101413; }
-    .cx-row .v { color:#3a423f; }
-
     /* ── Mockup 4 · SteelX ── */
     .sx { --sx:#16a34a; --cand:#e0922a; display:flex; font-size:11px; background:#0c1511; min-height:320px; color:#cdd6d1; }
     .sx-side { width:100px; flex-shrink:0; background:#0a120e; border-right:1px solid rgba(255,255,255,.06); padding:12px 10px; }
@@ -172,7 +144,6 @@
       .ib-h { font-size:14px; }
       .ib-stats { grid-template-columns:repeat(2,1fr); }
       .iv { padding:16px 12px; }
-      .cx-side { width:140px; }
       .sx-side { width:86px; }
       .sx-h { font-size:13px; }
     }
@@ -349,61 +320,9 @@
         <div class="browser">
           <div class="bw-bar">
             <div class="bw-dots"><span class="bw-dot" style="background:#ff5f57"></span><span class="bw-dot" style="background:#febc2e"></span><span class="bw-dot" style="background:#28c840"></span></div>
-            <div class="bw-url">app.certx.app/workspace</div>
+            <div class="bw-url">www.certx.app</div>
           </div>
-          <div class="cx">
-            <div class="cx-view">
-              <div class="cx-view__bar">
-                <div class="cx-view__logo"><span class="c">✓</span>Cert X</div>
-                <div class="cx-view__org">Muster GmbH</div>
-              </div>
-              <div class="cx-draw">
-                <svg viewBox="0 0 240 180" fill="none" preserveAspectRatio="xMidYMid meet">
-                  <g stroke="#1c2433" stroke-width="1.1">
-                    <circle cx="98" cy="92" r="54"/>
-                    <circle cx="98" cy="92" r="41"/>
-                    <circle cx="98" cy="92" r="15"/>
-                    <ellipse cx="98" cy="56" rx="6" ry="11"/>
-                    <ellipse cx="129" cy="110" rx="6" ry="11" transform="rotate(60 129 110)"/>
-                    <ellipse cx="67" cy="110" rx="6" ry="11" transform="rotate(-60 67 110)"/>
-                    <circle cx="190" cy="44" r="14" stroke-dasharray="3 2"/>
-                  </g>
-                  <g stroke="#c2c8c5" stroke-width="0.7" stroke-dasharray="5 3">
-                    <line x1="98" y1="30" x2="98" y2="154"/>
-                    <line x1="38" y1="92" x2="158" y2="92"/>
-                  </g>
-                  <g stroke="#9aa3a0" stroke-width="0.8">
-                    <line x1="46" y1="162" x2="150" y2="162"/>
-                  </g>
-                  <text x="84" y="159" fill="#5f6764" font-size="8" font-family="monospace">Ø102</text>
-                  <text x="172" y="22" fill="#5f6764" font-size="7.5" font-family="monospace">DETAIL A</text>
-                </svg>
-                <span class="cx-balloon" style="left:41%;top:18%">4</span>
-                <span class="cx-balloon" style="left:23%;top:40%">5</span>
-                <span class="cx-balloon" style="left:19%;top:64%">6</span>
-                <span class="cx-balloon" style="left:41%;top:80%">7</span>
-                <span class="cx-balloon" style="left:60%;top:52%">1</span>
-                <span class="cx-balloon r" style="left:66%;top:74%">12</span>
-              </div>
-            </div>
-            <aside class="cx-side">
-              <div class="cx-side__top">
-                <div class="cx-side__h">PLANETARY RETAINER RING</div>
-                <div class="cx-side__id">208357 · extracted</div>
-              </div>
-              <div class="cx-btns">
-                <span class="cx-btn pri">Merkmale extrahieren</span>
-                <span class="cx-btn sec">Protokoll erstellen</span>
-              </div>
-              <div class="cx-meta">16 Merkmale · 84% confidence</div>
-              <div class="cx-grp"><span class="dot g"></span>INFOBLOCK · 1</div>
-              <div class="cx-row"><span class="n">16</span><span class="t">ITEM MASS 0,178 kg</span><span class="v">0.178</span></div>
-              <div class="cx-grp"><span class="dot"></span>DIMENSIONEN · 11</div>
-              <div class="cx-row"><span class="n">1</span><span class="t">Ø102</span><span class="v">102</span></div>
-              <div class="cx-row"><span class="n">2</span><span class="t">(Ø139)</span><span class="v">139</span></div>
-              <div class="cx-row"><span class="n">3</span><span class="t">Ø150</span><span class="v">150</span></div>
-            </aside>
-          </div>
+          <img src="/public/certx-landing.png" alt="CertX landing page — From drawing to certified spec" style="display:block;width:100%">
         </div>
       </div>
     </div>
