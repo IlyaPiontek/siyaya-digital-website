@@ -3,18 +3,46 @@
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Page not found — Siyaya Digital</title>
+  <meta name="description" content="This page doesn't exist. Find your way back to Siyaya Digital's apps and web platforms.">
+  <meta name="theme-color" content="#f6f4ef">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/public/logo.png">
   <link rel="stylesheet" href="/public/style.css">
+  <style>
+    .nf-links { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:26px; }
+    .nf-links a { font-size:0.88rem; border:1px solid var(--line); border-radius:99px; padding:7px 16px; color:var(--ink-soft); background:var(--card-bg); text-decoration:none; transition:border-color .2s, color .2s; }
+    .nf-links a:hover { border-color:var(--accent-soft); color:var(--accent); text-decoration:none; }
+  </style>
 </head>
 <body>
-<nav class="nav"><div class="nav__inner"><a class="nav__logo" href="/"><img src="/public/logo.png" alt="Siyaya Digital" class="nav__logo-mark">SIYAYA DIGITAL</a></div></nav>
-<div style="min-height:78vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px;">
-  <div>
-    <div style="font-size:56px;margin-bottom:16px;">🌿</div>
-    <div style="font-size:0.68rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--g400);margin-bottom:10px;">404 — Page not found</div>
-    <h2 style="color:var(--text);margin-bottom:14px;">This page doesn't exist.</h2>
-    <p style="margin-bottom:28px;">The page you're looking for has moved or never existed.</p>
-    <a class="btn btn--primary" href="/">Back to home</a>
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="/"><img src="/public/logo.png" alt="Siyaya Digital" class="nav__logo-mark">SIYAYA DIGITAL</a>
+    <div class="nav__links">
+      <a class="nav__link" href="/">Home</a>
+      <a class="nav__link" href="/steelx">Steel X</a>
+      <a class="nav__link" href="/clockx">ClockX</a>
+      <a class="nav__link" href="/saas">SaaS</a>
+      <a class="nav__link" href="/free">Free</a>
+      <a class="nav__link" href="/impressum">Impressum</a>
+    </div>
   </div>
-</div>
+</nav>
+<main style="min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px;">
+  <div>
+    <div style="font-size:56px;margin-bottom:16px;" aria-hidden="true">🌿</div>
+    <div style="font-size:0.68rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--accent-soft);margin-bottom:10px;">Error 404</div>
+    <h1 style="font-size:clamp(1.8rem,4vw,2.6rem);color:var(--ink);margin-bottom:14px;">This page doesn't exist.</h1>
+    <p style="margin-bottom:28px;max-width:44ch;">The page you're looking for has moved or never existed. Here's where it might be:</p>
+    <a class="btn btn--primary" href="/">Back to home</a>
+    <div class="nf-links">
+      <a href="/steelx">Steel X</a>
+      <a href="/clockx">ClockX</a>
+      <a href="/saas">SaaS platforms</a>
+      <a href="/free">Free tools &amp; games</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </div>
+</main>
 <footer class="footer"><div class="footer__copy">© 2026 IP Strategy UG · Siyaya Digital</div></footer>
 </body></html>

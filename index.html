@@ -5,6 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Siyaya Digital — Simple apps, built with care</title>
 <meta name="description" content="Siyaya Digital is an indie iOS app studio building clean, ad-free, privacy-first apps. Based in Neuss, Germany.">
+<link rel="canonical" href="https://www.siyaya-digital.com/">
+<meta name="theme-color" content="#f6f4ef">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Siyaya Digital">
+<meta property="og:title" content="Siyaya Digital — Simple apps, built with care">
+<meta property="og:description" content="An indie studio building clean, ad-free, privacy-first iOS apps and web platforms. Based in Neuss, Germany.">
+<meta property="og:url" content="https://www.siyaya-digital.com/">
+<meta property="og:image" content="https://www.siyaya-digital.com/public/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Siyaya Digital — Simple apps, built with care">
+<meta name="twitter:description" content="An indie studio building clean, ad-free, privacy-first iOS apps and web platforms. Based in Neuss, Germany.">
+<meta name="twitter:image" content="https://www.siyaya-digital.com/public/og-image.png">
 <link rel="icon" href="/public/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -142,7 +156,7 @@
   .trust-inner span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent)}
 
   /* ---------- sections ---------- */
-  section{padding:110px 0}
+  section{padding:110px 0;scroll-margin-top:84px}
   .sec-label{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
   h2{font-family:"Fraunces",serif;font-weight:380;font-size:clamp(32px,5vw,52px);line-height:1.04;letter-spacing:-0.03em;max-width:16ch}
   .sec-lead{color:var(--ink-soft);max-width:52ch;margin-top:20px;font-size:18px}
@@ -225,6 +239,32 @@
   /* reveal */
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease}
   .reveal.in{opacity:1;transform:none}
+
+  /* on the web strip */
+  .web-strip{
+    margin-top:22px;border:1px solid var(--line);border-radius:var(--radius);
+    background:var(--card);padding:26px 32px;
+    display:flex;align-items:center;justify-content:space-between;gap:18px 28px;flex-wrap:wrap;
+  }
+  .web-strip .ws-label{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .web-strip .ws-items{display:flex;gap:8px 24px;flex-wrap:wrap;color:var(--ink-soft);font-size:15px}
+  .web-strip .ws-items span{display:flex;align-items:center;gap:9px;white-space:nowrap}
+  .web-strip .ws-items span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0}
+  .web-strip .ws-cta{font-weight:600;color:var(--ink);white-space:nowrap}
+  .web-strip .ws-cta .arr{display:inline-block;transition:transform .2s}
+  .web-strip:hover .ws-cta{color:var(--accent)}
+  .web-strip:hover .ws-cta .arr{transform:translateX(4px)}
+  @media(max-width:680px){.web-strip{padding:22px 24px}}
+
+  /* a11y: visible keyboard focus */
+  a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+  /* a11y: respect reduced motion */
+  @media(prefers-reduced-motion:reduce){
+    *{transition:none!important;animation:none!important}
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none}
+  }
 </style>
 </head>
 <body>
@@ -307,7 +347,7 @@
   <div class="wrap">
     <p class="sec-label reveal">Our apps</p>
     <h2 class="serif reveal">Built to last.</h2>
-    <p class="sec-lead reveal">Each app does one thing exceptionally. Available on the App Store.</p>
+    <p class="sec-lead reveal">Each app does one thing exceptionally well — built for iPhone, priced fairly.</p>
 
     <a href="/steelx" class="feature-app reveal" style="display:grid;color:inherit">
       <div class="fa-text">
@@ -364,6 +404,17 @@
         <p>A Pomodoro timer with ambient sound and streak tracking. Beautiful and distraction-free.</p>
       </div>
     </div>
+
+    <a href="/saas" class="web-strip reveal">
+      <span class="ws-label">Also on the web</span>
+      <span class="ws-items">
+        <span>Immobilien Butler</span>
+        <span>immo-verwalter</span>
+        <span>CertX</span>
+        <span>SteelX</span>
+      </span>
+      <span class="ws-cta">Explore our SaaS <span class="arr">→</span></span>
+    </a>
   </div>
 </section>
 
@@ -399,8 +450,14 @@
           <h4>Apps</h4>
           <a href="/steelx">Steel X</a>
           <a href="/clockx">ClockX</a>
-          <a href="#apps">QR Scanner</a>
-          <a href="#apps">Focus Timer</a>
+          <a href="/free">Free tools &amp; games</a>
+        </div>
+        <div class="foot-col">
+          <h4>Web</h4>
+          <a href="/saas">All SaaS platforms</a>
+          <a href="https://immobilien-butler.com" target="_blank" rel="noopener">Immobilien Butler</a>
+          <a href="https://certx.app" target="_blank" rel="noopener">CertX</a>
+          <a href="https://steelx.app" target="_blank" rel="noopener">SteelX</a>
         </div>
         <div class="foot-col">
           <h4>Legal</h4>

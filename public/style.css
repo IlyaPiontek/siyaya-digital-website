@@ -260,6 +260,16 @@ p  { color: var(--ink-soft); }
 .delay-3   { animation-delay:.3s; }
 .delay-4   { animation-delay:.4s; }
 
+/* ── Accessibility ── */
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px;
+}
+[id] { scroll-margin-top: 84px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  html { scroll-behavior: auto; }
+}
+
 /* ── Responsive ── */
 @media(max-width:768px){
   .nav { height:auto; }
