@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClockX — Time Tracking, Trips & Shifts for iPhone</title>
+  <meta name="description" content="ClockX is a simple time tracking app for iPhone. One-tap check-in, projects, to-dos, trip & mileage log, shift and vacation calendar, CSV/PDF export. Cloud sync or fully local. 1,49 €/month.">
+  <link rel="icon" href="/public/logo.png">
+  <link rel="stylesheet" href="/public/style.css">
+  <style>
+    :root {
+      --cx-blue: #2563eb;
+      --cx-blue-deep: #1e40af;
+      --cx-blue-soft: #8fb0f4;
+    }
+
+    /* ── hero ── */
+    .cx-hero { padding:80px 0 70px; }
+    .cx-hero__grid { display:grid; grid-template-columns:1.05fr .95fr; gap:54px; align-items:center; }
+    @media(max-width:860px){ .cx-hero__grid{ grid-template-columns:1fr; gap:56px; } .cx-hero{padding-top:60px} }
+    .cx-eyebrow {
+      display:inline-flex; align-items:center; gap:9px;
+      font-size:0.82rem; letter-spacing:.03em; color:var(--ink-soft);
+      border:1px solid var(--line); border-radius:99px; padding:6px 15px; background:var(--card-bg);
+      margin-bottom:26px;
+    }
+    .cx-eyebrow .pulse { width:7px; height:7px; border-radius:50%; background:var(--cx-blue); animation:cxpulse 2.4s infinite; }
+    @keyframes cxpulse{0%{box-shadow:0 0 0 0 rgba(37,99,235,.5)}70%{box-shadow:0 0 0 9px rgba(37,99,235,0)}100%{box-shadow:0 0 0 0 rgba(37,99,235,0)}}
+    .cx-hero h1 { font-family:'Fraunces',serif; font-weight:380; font-size:clamp(2.6rem,6vw,4rem); line-height:1; letter-spacing:-0.035em; margin-bottom:22px; }
+    .cx-hero h1 em { font-style:italic; color:var(--cx-blue); }
+    .cx-hero__sub { font-size:clamp(1.05rem,1.8vw,1.2rem); color:var(--ink-soft); max-width:44ch; margin-bottom:30px; }
+    .cx-tags { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:34px; }
+    .cx-tag { font-size:0.8rem; border:1px solid var(--line); border-radius:99px; padding:5px 13px; color:var(--ink-soft); background:var(--bg); }
+    .cx-cta-row { display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+
+    /* ── phone mockup (CSS recreation of the ClockX home screen) ── */
+    .cx-phone-stage { display:flex; justify-content:center; position:relative; }
+    .cx-phone-stage::before {
+      content:""; position:absolute; inset:-40px; border-radius:50%;
+      background:radial-gradient(circle at 50% 40%,rgba(37,99,235,.14),transparent 65%); filter:blur(8px); z-index:0;
+    }
+    .cx-phone {
+      position:relative; z-index:1; width:286px; height:588px; border-radius:46px;
+      background:#0f1219; padding:11px;
+      box-shadow:0 40px 80px -28px rgba(28,27,24,.45), inset 0 0 0 2px rgba(255,255,255,.05);
+      transform:rotate(2.5deg); transition:transform .5s ease;
+    }
+    .cx-phone:hover { transform:rotate(0deg); }
+    .cx-screen {
+      width:100%; height:100%; border-radius:36px; background:#fbfcfe; overflow:hidden;
+      display:flex; flex-direction:column;
+      font-family:'Hanken Grotesk',sans-serif; letter-spacing:0; line-height:1.35;
+      color:#0f172a;
+    }
+    .cx-scr-body { flex:1; padding:34px 16px 0; display:flex; flex-direction:column; gap:12px; overflow:hidden; }
+    .cx-scr-hello { display:flex; align-items:center; gap:10px; }
+    .cx-scr-avatar { width:34px; height:34px; border-radius:50%; background:var(--cx-blue); color:#fff; display:grid; place-items:center; font-weight:600; font-size:14px; flex-shrink:0; }
+    .cx-scr-hello .h { font-weight:700; font-size:15px; }
+    .cx-scr-hello .s { font-size:10px; color:#64748b; }
+    .cx-scr-banner {
+      background:linear-gradient(135deg,#3b82f6,#2563eb); border-radius:16px;
+      padding:14px; display:flex; align-items:center; gap:11px; color:#fff;
+      box-shadow:0 10px 22px -10px rgba(37,99,235,.55);
+    }
+    .cx-scr-play { width:32px; height:32px; border-radius:50%; background:#fff; flex-shrink:0; display:grid; place-items:center; }
+    .cx-scr-play::after { content:""; display:block; width:0; height:0; border-style:solid; border-width:6px 0 6px 10px; border-color:transparent transparent transparent var(--cx-blue); margin-left:2px; }
+    .cx-scr-banner .t { font-weight:700; font-size:12.5px; }
+    .cx-scr-banner .u { font-size:10px; opacity:.85; }
+    .cx-scr-banner .clock { margin-left:auto; font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:13px; font-weight:600; }
+    .cx-scr-card { background:#fff; border:1px solid #e8edf5; border-radius:14px; padding:12px 13px; box-shadow:0 4px 14px rgba(15,23,42,.04); }
+    .cx-scr-row { display:flex; justify-content:space-between; align-items:baseline; }
+    .cx-scr-row .k { font-size:11.5px; color:#475569; }
+    .cx-scr-row .v { font-family:ui-monospace,'SF Mono',Menlo,monospace; font-weight:700; font-size:14px; }
+    .cx-scr-entry { display:flex; align-items:center; gap:6px; margin-top:7px; font-size:10.5px; color:#64748b; }
+    .cx-scr-entry .dot { width:7px; height:7px; border-radius:50%; background:#f59e0b; flex-shrink:0; }
+    .cx-scr-entry .km { margin-left:auto; color:#334155; font-weight:600; }
+    .cx-scr-label { font-size:11px; font-weight:700; color:#0f172a; margin:2px 0 -4px; }
+    .cx-scr-todo { display:flex; align-items:center; gap:8px; padding:6px 0; border-bottom:1px solid #eef2f8; font-size:10.5px; color:#334155; }
+    .cx-scr-todo:last-child { border-bottom:none; }
+    .cx-scr-check { width:14px; height:14px; border-radius:50%; border:1.5px solid #cbd5e1; flex-shrink:0; }
+    .cx-scr-check--done { background:var(--cx-blue); border-color:var(--cx-blue); position:relative; }
+    .cx-scr-check--done::after { content:"✓"; position:absolute; inset:0; display:grid; place-items:center; color:#fff; font-size:9px; }
+    .cx-scr-todo .star { margin-left:auto; color:#f59e0b; font-size:11px; }
+    .cx-scr-todo .star--off { color:#cbd5e1; }
+    .cx-scr-todo--done { color:#94a3b8; text-decoration:line-through; }
+    .cx-scr-trip .r { font-weight:700; font-size:11px; color:#0f172a; }
+    .cx-scr-trip .m { font-size:9.5px; color:#64748b; }
+    .cx-scr-tab {
+      margin-top:auto; display:flex; align-items:center; justify-content:space-around;
+      padding:10px 6px 18px; border-top:1px solid #eef2f8; font-size:8.5px; color:#64748b; background:#fff;
+    }
+    .cx-scr-tab .on { color:var(--cx-blue); font-weight:600; }
+    .cx-scr-fab { width:38px; height:38px; border-radius:50%; background:var(--cx-blue); box-shadow:0 8px 18px -6px rgba(37,99,235,.6); display:grid; place-items:center; }
+    .cx-scr-fab::after { content:""; width:0; height:0; border-style:solid; border-width:6px 0 6px 10px; border-color:transparent transparent transparent #fff; margin-left:2px; }
+
+    /* ── sections ── */
+    .cx-section { padding:96px 0; }
+    .cx-section h2 { font-family:'Fraunces',serif; font-weight:380; font-size:clamp(2rem,4vw,3rem); letter-spacing:-0.03em; margin-bottom:14px; max-width:18ch; }
+    .cx-lead { color:var(--ink-soft); max-width:52ch; margin-bottom:50px; font-size:1.05rem; }
+    .cx-section .eyebrow { color:var(--cx-blue); }
+
+    /* features */
+    .cx-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--r-lg); overflow:hidden; }
+    @media(max-width:760px){ .cx-grid{ grid-template-columns:1fr; } }
+    .cx-card { background:var(--card-bg); padding:34px 30px; transition:background .3s; }
+    .cx-card:hover { background:#fff; }
+    .cx-card__num { font-family:'Fraunces',serif; font-size:0.95rem; color:var(--cx-blue-soft); margin-bottom:22px; }
+    .cx-card__title { font-family:'Fraunces',serif; font-weight:420; font-size:1.3rem; color:var(--ink); margin-bottom:10px; letter-spacing:-0.02em; }
+    .cx-card__text { font-size:0.95rem; color:var(--ink-soft); line-height:1.7; }
+
+    /* data choice */
+    .cx-data { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+    @media(max-width:680px){ .cx-data{ grid-template-columns:1fr; } }
+    .cx-data-card { border:1px solid var(--line); border-radius:var(--r-lg); padding:34px 30px; background:var(--card-bg); }
+    .cx-data-card .lbl { font-size:0.72rem; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--cx-blue); margin-bottom:16px; }
+    .cx-data-card h3 { font-family:'Fraunces',serif; font-weight:420; font-size:1.35rem; margin-bottom:10px; }
+    .cx-data-card p { font-size:0.95rem; color:var(--ink-soft); line-height:1.7; }
+
+    /* pricing */
+    .cx-pricing { background:var(--bg-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); text-align:center; }
+    .cx-pricing-card { max-width:440px; margin:0 auto; background:var(--card-bg); border-radius:var(--r-xl); border:1px solid var(--line); padding:46px 40px; box-shadow:var(--shadow-md); text-align:left; }
+    .cx-price-badge { font-size:0.72rem; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--cx-blue); margin-bottom:16px; }
+    .cx-price { font-family:'Fraunces',serif; font-weight:400; font-size:3.4rem; color:var(--cx-blue); line-height:1; }
+    .cx-price-period { font-size:0.92rem; color:var(--ink-soft); margin-bottom:30px; }
+    .cx-features-list { margin-bottom:30px; }
+    .cx-feature-item { display:flex; align-items:flex-start; gap:11px; padding:10px 0; border-bottom:1px solid var(--line); font-size:0.92rem; color:var(--ink-soft); }
+    .cx-feature-item:last-child { border-bottom:none; }
+    .cx-check { color:var(--cx-blue); font-weight:700; flex-shrink:0; }
+    .cx-btn-blue { background:var(--cx-blue); color:#fff; }
+    .cx-btn-blue:hover { background:var(--cx-blue-deep); color:#fff; transform:translateY(-2px); box-shadow:0 12px 28px rgba(37,99,235,.3); text-decoration:none; }
+
+    /* support */
+    .cx-support-card { background:var(--card-bg); border-radius:var(--r-xl); border:1px solid var(--line); padding:42px; display:flex; justify-content:space-between; align-items:center; box-shadow:var(--shadow-sm); flex-wrap:wrap; gap:24px; }
+    .cx-support-card h3 { font-family:'Fraunces',serif; font-weight:420; font-size:1.5rem; color:var(--ink); margin-bottom:8px; }
+    .cx-support-card p { font-size:0.98rem; color:var(--ink-soft); }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="/"><img src="/public/logo.png" alt="Siyaya Digital" class="nav__logo-mark">SIYAYA DIGITAL</a>
+    <div class="nav__links">
+      <a class="nav__link" href="/">Home</a>
+      <a class="nav__link" href="/saas">SaaS</a>
+      <a class="nav__link" href="/free">Free</a>
+      <a class="nav__link" href="/impressum">Impressum</a>
+      <a class="nav__cta" href="#pricing">Get ClockX</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="cx-hero">
+  <div class="container cx-hero__grid">
+    <div>
+      <span class="cx-eyebrow"><span class="pulse"></span>iOS App · www.clockx.io</span>
+      <h1>ClockX<br><em>Your time, tracked.</em></h1>
+      <p class="cx-hero__sub">
+        One-tap check-in, projects, to-dos, trip &amp; mileage log and a shift calendar —
+        everything a working day needs, in one clean app. Cloud sync or fully local, your choice.
+      </p>
+      <div class="cx-tags">
+        <span class="cx-tag">Time tracking</span>
+        <span class="cx-tag">Projects</span>
+        <span class="cx-tag">Trips &amp; mileage</span>
+        <span class="cx-tag">Shift calendar</span>
+        <span class="cx-tag">CSV / PDF export</span>
+      </div>
+      <div class="cx-cta-row">
+        <a class="btn cx-btn-blue" href="https://www.clockx.io" target="_blank" rel="noopener">Visit clockx.io →</a>
+        <a class="btn btn--outline" href="#pricing">See pricing</a>
+      </div>
+    </div>
+
+    <div class="cx-phone-stage">
+      <div class="cx-phone">
+        <div class="cx-screen" role="img" aria-label="ClockX home screen with check-in timer, today total, to-dos and trips">
+          <div class="cx-scr-body">
+            <div class="cx-scr-hello">
+              <span class="cx-scr-avatar">E</span>
+              <span><span class="h">Hi, Emma 👋</span><br><span class="s">Ready for today?</span></span>
+            </div>
+            <div class="cx-scr-banner">
+              <span class="cx-scr-play"></span>
+              <span><span class="t">Not checked in</span><br><span class="u">Start tracking your time</span></span>
+              <span class="clock">00:00:00</span>
+            </div>
+            <div class="cx-scr-card">
+              <div class="cx-scr-row"><span class="k">Today total</span><span class="v">4h 15m</span></div>
+              <div class="cx-scr-entry"><span class="dot"></span>07:30–12:00 · Site North<span class="km">4h 15m</span></div>
+            </div>
+            <div class="cx-scr-label">To-dos</div>
+            <div class="cx-scr-card" style="padding-top:6px;padding-bottom:6px;">
+              <div class="cx-scr-todo"><span class="cx-scr-check"></span>Order materials for the north site<span class="star">★</span></div>
+              <div class="cx-scr-todo"><span class="cx-scr-check"></span>Call site manager about handover<span class="star star--off">☆</span></div>
+              <div class="cx-scr-todo cx-scr-todo--done"><span class="cx-scr-check cx-scr-check--done"></span>Submit June timesheet<span class="star star--off">☆</span></div>
+            </div>
+            <div class="cx-scr-label">Trips · 122 km</div>
+            <div class="cx-scr-card cx-scr-trip">
+              <div class="cx-scr-row"><span class="r">Manchester → Leeds</span><span class="v" style="font-size:11px;">44 km</span></div>
+              <div class="m">2026-07-02 · MN24 LFC · Client meeting</div>
+            </div>
+          </div>
+          <div class="cx-scr-tab">
+            <span class="on">⌂ Home</span><span>▤ Analysis</span><span class="cx-scr-fab"></span><span>▦ Projects</span><span>☰ More</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- FEATURES -->
+<section class="cx-section">
+  <div class="container">
+    <span class="eyebrow">What ClockX does</span>
+    <h2>One app for the whole working day.</h2>
+    <p class="cx-lead">Built for people who track hours, drive to sites and need clean reports at the end of the month.</p>
+
+    <div class="cx-grid">
+      <div class="cx-card">
+        <div class="cx-card__num">01</div>
+        <div class="cx-card__title">One-Tap Time Tracking</div>
+        <div class="cx-card__text">Check in when you start, check out when you're done. A live timer keeps count, and every entry lands in your daily total — with start, end and project.</div>
+      </div>
+      <div class="cx-card">
+        <div class="cx-card__num">02</div>
+        <div class="cx-card__title">Projects</div>
+        <div class="cx-card__text">Create colour-coded projects — Office, Site North, Client Harper — and start or pause tracking per project. Always see what's running at a glance.</div>
+      </div>
+      <div class="cx-card">
+        <div class="cx-card__num">03</div>
+        <div class="cx-card__title">To-Dos</div>
+        <div class="cx-card__text">A simple task list right on your home screen. Add tasks in seconds, star the important ones and tick them off as the day moves on.</div>
+      </div>
+      <div class="cx-card">
+        <div class="cx-card__num">04</div>
+        <div class="cx-card__title">Trips &amp; Mileage Log</div>
+        <div class="cx-card__text">Log business trips with route, date, licence plate, purpose and distance. Repeat a frequent trip with one tap and keep a running kilometre total.</div>
+      </div>
+      <div class="cx-card">
+        <div class="cx-card__num">05</div>
+        <div class="cx-card__title">Analysis &amp; Export</div>
+        <div class="cx-card__text">See your hours per project and trip totals by month, year or any free date range — then export as CSV or PDF, or share the report directly.</div>
+      </div>
+      <div class="cx-card">
+        <div class="cx-card__num">06</div>
+        <div class="cx-card__title">Shift &amp; Vacation Calendar</div>
+        <div class="cx-card__text">Plan shifts, mark vacation days and keep an eye on your yearly vacation count. Sync with your iPhone calendar if you want to.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DATA CHOICE -->
+<section class="cx-section" style="padding-top:0;">
+  <div class="container">
+    <span class="eyebrow">Your data, your choice</span>
+    <h2>Cloud sync or fully local.</h2>
+    <p class="cx-lead">ClockX works both ways — you decide where your data lives.</p>
+    <div class="cx-data">
+      <div class="cx-data-card">
+        <div class="lbl">Option 1</div>
+        <h3>Local on your device</h3>
+        <p>Keep everything offline on your iPhone. No account, no server — all data stays on this device, always.</p>
+      </div>
+      <div class="cx-data-card">
+        <div class="lbl">Option 2</div>
+        <h3>Cloud saving</h3>
+        <p>Prefer a backup? Turn on cloud saving and your times, trips and to-dos are stored securely and stay with you across devices.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="cx-section cx-pricing" id="pricing">
+  <div class="container">
+    <span class="eyebrow">Pricing</span>
+    <h2 style="margin:0 auto 44px;max-width:none;">One small price. Everything included.</h2>
+    <div class="cx-pricing-card">
+      <div class="cx-price-badge">ClockX subscription</div>
+      <div class="cx-price">1,49 €</div>
+      <div class="cx-price-period">per month</div>
+      <div class="cx-features-list">
+        <div class="cx-feature-item"><span class="cx-check">✓</span>Unlimited time tracking with live timer</div>
+        <div class="cx-feature-item"><span class="cx-check">✓</span>Colour-coded projects</div>
+        <div class="cx-feature-item"><span class="cx-check">✓</span>To-dos with priorities</div>
+        <div class="cx-feature-item"><span class="cx-check">✓</span>Trip &amp; mileage log with repeat trips</div>
+        <div class="cx-feature-item"><span class="cx-check">✓</span>Monthly, yearly &amp; free-range analysis</div>
+        <div class="cx-feature-item"><span class="cx-check">✓</span>CSV &amp; PDF export, share sheet</div>
+        <div class="cx-feature-item"><span class="cx-check">✓</span>Shift &amp; vacation calendar with sync</div>
+        <div class="cx-feature-item"><span class="cx-check">✓</span>Cloud saving or 100% local — your choice</div>
+        <div class="cx-feature-item"><span class="cx-check">✓</span>No ads, ever</div>
+      </div>
+      <a class="btn cx-btn-blue" href="https://www.clockx.io" target="_blank" rel="noopener" style="width:100%;justify-content:center;">Get ClockX at clockx.io</a>
+      <p style="font-size:0.78rem;color:var(--text-faint);margin-top:14px;">
+        Subscription via Apple. Restore purchases anytime on any device with the same Apple ID.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORT -->
+<section class="cx-section">
+  <div class="container">
+    <div class="cx-support-card">
+      <div>
+        <h3>Need help with ClockX?</h3>
+        <p>A real person reads and responds to every support email — usually within 48 hours.</p>
+      </div>
+      <a class="btn cx-btn-blue" href="mailto:legal@siyaya-digital.com?subject=ClockX Support">Email support</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__logo">SIYAYA DIGITAL</div>
+  <div class="footer__tagline">ClockX — Time tracking, trips &amp; shifts for iPhone</div>
+  <div class="footer__links">
+    <a class="footer__link" href="/">Home</a>
+    <a class="footer__link" href="https://www.clockx.io" target="_blank" rel="noopener">clockx.io</a>
+    <a class="footer__link" href="/privacy">Privacy Policy</a>
+    <a class="footer__link" href="/terms">Terms of Use</a>
+    <a class="footer__link" href="/impressum">Impressum</a>
+    <a class="footer__link" href="mailto:legal@siyaya-digital.com">Contact</a>
+    <a class="footer__link" href="https://x.com/IlyaPion" target="_blank" rel="noopener">X (@IlyaPion)</a>
+  </div>
+  <div class="footer__copy">© 2026 IP Strategy UG · Ilya Piontek · Neuss, Germany</div>
+</footer>
+
+</body>
+</html>

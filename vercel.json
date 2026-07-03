@@ -4,6 +4,7 @@
   "rewrites": [
     { "source": "/",                        "destination": "/index.html" },
     { "source": "/steelx",                  "destination": "/steelx/index.html" },
+    { "source": "/clockx",                  "destination": "/clockx/index.html" },
     { "source": "/saas",                    "destination": "/saas/index.html" },
     { "source": "/free",                    "destination": "/free/index.html" },
     { "source": "/steelx/privacy",          "destination": "/steelx/privacy/index.html" },
