@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Steel X — Tube Inventory & Counting App</title>
-  <meta name="theme-color" content="#f6f4ef">
+  <meta name="theme-color" content="#070b16">
   <link rel="canonical" href="https://www.siyaya-digital.com/steelx">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Siyaya Digital">
@@ -32,8 +32,8 @@
       margin-bottom:26px;
     }
     .sx-eyebrow .pulse { width:7px; height:7px; border-radius:50%; background:var(--accent); animation:sxpulse 2.4s infinite; }
-    @keyframes sxpulse{0%{box-shadow:0 0 0 0 rgba(124,148,131,.6)}70%{box-shadow:0 0 0 9px rgba(124,148,131,0)}100%{box-shadow:0 0 0 0 rgba(124,148,131,0)}}
-    .sx-hero h1 { font-family:'Fraunces',serif; font-weight:380; font-size:clamp(2.6rem,6vw,4rem); line-height:1; letter-spacing:-0.035em; margin-bottom:22px; }
+    @keyframes sxpulse{0%{box-shadow:0 0 0 0 rgba(34,211,238,.6)}70%{box-shadow:0 0 0 9px rgba(34,211,238,0)}100%{box-shadow:0 0 0 0 rgba(34,211,238,0)}}
+    .sx-hero h1 { font-family:var(--font-sans); font-weight:380; font-size:clamp(2.6rem,6vw,4rem); line-height:1; letter-spacing:-0.035em; margin-bottom:22px; }
     .sx-hero h1 em { font-style:italic; color:var(--accent); }
     .sx-hero__sub { font-size:clamp(1.05rem,1.8vw,1.2rem); color:var(--ink-soft); max-width:44ch; margin-bottom:30px; }
     .sx-tags { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:34px; }
@@ -44,7 +44,7 @@
     .sx-phone-stage { display:flex; justify-content:center; position:relative; }
     .sx-phone-stage::before {
       content:""; position:absolute; inset:-40px; border-radius:50%;
-      background:radial-gradient(circle at 50% 40%,rgba(63,92,74,.14),transparent 65%); filter:blur(8px); z-index:0;
+      background:radial-gradient(circle at 50% 40%,rgba(34,211,238,.14),transparent 65%); filter:blur(8px); z-index:0;
     }
     .sx-phone {
       position:relative; z-index:1; width:286px; height:588px; border-radius:46px;
@@ -53,28 +53,28 @@
       transform:rotate(2.5deg); transition:transform .5s ease;
     }
     .sx-phone:hover { transform:rotate(0deg); }
-    .sx-screen { width:100%; height:100%; border-radius:36px; background:#f3f4f2; overflow:hidden; }
+    .sx-screen { width:100%; height:100%; border-radius:36px; background:#0c1428; overflow:hidden; }
     .sx-screen img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
 
     /* ── sections ── */
     .sx-section { padding:96px 0; }
-    .sx-section h2 { font-family:'Fraunces',serif; font-weight:380; font-size:clamp(2rem,4vw,3rem); letter-spacing:-0.03em; margin-bottom:14px; max-width:18ch; }
+    .sx-section h2 { font-family:var(--font-sans); font-weight:380; font-size:clamp(2rem,4vw,3rem); letter-spacing:-0.03em; margin-bottom:14px; max-width:18ch; }
     .sx-lead { color:var(--ink-soft); max-width:52ch; margin-bottom:50px; font-size:1.05rem; }
 
     /* features */
     .sx-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--r-lg); overflow:hidden; }
     @media(max-width:760px){ .sx-grid{ grid-template-columns:1fr; } }
     .sx-card { background:var(--card-bg); padding:34px 30px; transition:background .3s; }
-    .sx-card:hover { background:#fff; }
-    .sx-card__num { font-family:'Fraunces',serif; font-size:0.95rem; color:var(--accent-soft); margin-bottom:22px; }
-    .sx-card__title { font-family:'Fraunces',serif; font-weight:420; font-size:1.3rem; color:var(--ink); margin-bottom:10px; letter-spacing:-0.02em; }
+    .sx-card:hover { background:#0e1730; }
+    .sx-card__num { font-family:var(--font-sans); font-size:0.95rem; color:var(--accent-soft); margin-bottom:22px; }
+    .sx-card__title { font-family:var(--font-sans); font-weight:420; font-size:1.3rem; color:var(--ink); margin-bottom:10px; letter-spacing:-0.02em; }
     .sx-card__text { font-size:0.95rem; color:var(--ink-soft); line-height:1.7; }
 
     /* pricing */
     .sx-pricing { background:var(--bg-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); text-align:center; }
     .sx-pricing-card { max-width:440px; margin:0 auto; background:var(--card-bg); border-radius:var(--r-xl); border:1px solid var(--line); padding:46px 40px; box-shadow:var(--shadow-md); text-align:left; }
     .sx-price-badge { font-size:0.72rem; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--accent); margin-bottom:16px; }
-    .sx-price { font-family:'Fraunces',serif; font-weight:400; font-size:3.4rem; color:var(--accent); line-height:1; }
+    .sx-price { font-family:var(--font-sans); font-weight:400; font-size:3.4rem; color:var(--accent); line-height:1; }
     .sx-price-period { font-size:0.92rem; color:var(--ink-soft); margin-bottom:30px; }
 
     /* plan tiles */
@@ -82,8 +82,8 @@
     @media(max-width:480px){ .sx-plans{ grid-template-columns:1fr; } }
     .sx-plan { position:relative; border:1.5px solid var(--line); border-radius:var(--r-lg); padding:22px 20px; background:var(--card-bg); }
     .sx-plan--best { border-color:var(--accent); }
-    .sx-plan__flag { position:absolute; top:-11px; left:20px; font-size:0.62rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#fff; background:var(--accent); padding:4px 10px; border-radius:100px; }
-    .sx-plan__name { font-family:'Fraunces',serif; font-weight:440; font-size:1.25rem; color:var(--ink); margin-bottom:6px; }
+    .sx-plan__flag { position:absolute; top:-11px; left:20px; font-size:0.62rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#04121a; background:var(--accent); padding:4px 10px; border-radius:100px; }
+    .sx-plan__name { font-family:var(--font-sans); font-weight:440; font-size:1.25rem; color:var(--ink); margin-bottom:6px; }
     .sx-plan__price { font-size:1rem; color:var(--ink-soft); }
     .sx-plan__price strong { font-weight:600; color:var(--ink); }
     .sx-features-list { margin-bottom:30px; }
@@ -93,7 +93,7 @@
 
     /* support */
     .sx-support-card { background:var(--card-bg); border-radius:var(--r-xl); border:1px solid var(--line); padding:42px; display:flex; justify-content:space-between; align-items:center; box-shadow:var(--shadow-sm); flex-wrap:wrap; gap:24px; }
-    .sx-support-card h3 { font-family:'Fraunces',serif; font-weight:420; font-size:1.5rem; color:var(--ink); margin-bottom:8px; }
+    .sx-support-card h3 { font-family:var(--font-sans); font-weight:420; font-size:1.5rem; color:var(--ink); margin-bottom:8px; }
     .sx-support-card p { font-size:0.98rem; color:var(--ink-soft); }
   </style>
 </head>

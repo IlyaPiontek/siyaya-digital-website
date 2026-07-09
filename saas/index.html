@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Software as a Service — Siyaya Digital</title>
-  <meta name="theme-color" content="#f6f4ef">
+  <meta name="theme-color" content="#070b16">
   <link rel="canonical" href="https://www.siyaya-digital.com/saas">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Siyaya Digital">
@@ -24,7 +24,7 @@
     /* ── hero ── */
     .saas-hero { padding:80px 0 56px; text-align:center; }
     .saas-hero .eyebrow { justify-content:center; }
-    .saas-hero h1 { font-family:'Fraunces',serif; font-weight:380; font-size:clamp(2.6rem,6vw,4.2rem); line-height:1; letter-spacing:-0.035em; margin:0 auto 22px; max-width:14ch; }
+    .saas-hero h1 { font-family:var(--font-sans); font-weight:380; font-size:clamp(2.6rem,6vw,4.2rem); line-height:1; letter-spacing:-0.035em; margin:0 auto 22px; max-width:14ch; }
     .saas-hero h1 em { font-style:italic; color:var(--accent); }
     .saas-hero__sub { font-size:clamp(1.05rem,1.8vw,1.2rem); color:var(--ink-soft); max-width:52ch; margin:0 auto; }
 
@@ -34,7 +34,7 @@
     .saas-feature + .saas-feature { border-top:1px solid var(--line); }
     @media(max-width:860px){ .saas-feature{ grid-template-columns:1fr; gap:48px; } }
     .saas-feature__text .eyebrow { margin-bottom:14px; }
-    .saas-feature__text h2 { font-family:'Fraunces',serif; font-weight:400; font-size:clamp(1.9rem,3.4vw,2.6rem); letter-spacing:-0.025em; margin-bottom:14px; }
+    .saas-feature__text h2 { font-family:var(--font-sans); font-weight:400; font-size:clamp(1.9rem,3.4vw,2.6rem); letter-spacing:-0.025em; margin-bottom:14px; }
     .saas-feature__domain { font-size:0.86rem; font-weight:500; color:var(--accent-soft); letter-spacing:.02em; margin-bottom:18px; }
     .saas-feature__price { font-size:0.95rem; color:var(--ink); margin-bottom:26px; }
     .saas-feature__price strong { font-weight:600; }
@@ -52,7 +52,7 @@
     .saas-stage { display:flex; justify-content:center; position:relative; }
     .saas-stage::before {
       content:""; position:absolute; inset:-40px; border-radius:50%;
-      background:radial-gradient(circle at 50% 40%,rgba(63,92,74,.14),transparent 65%); filter:blur(8px); z-index:0;
+      background:radial-gradient(circle at 50% 40%,rgba(34,211,238,.14),transparent 65%); filter:blur(8px); z-index:0;
     }
     .browser {
       position:relative; z-index:1; width:100%; max-width:520px; border-radius:16px; background:#fff;
@@ -69,7 +69,7 @@
     /* ── Mockup 1 · Immobilien Butler ── */
     .ib { --ib:#5b54e8; display:flex; font-size:11px; background:#fff; min-height:320px; }
     .ib-side { width:122px; flex-shrink:0; background:#faf9ff; border-right:1px solid #eceaf6; padding:14px 12px; }
-    .ib-logo { display:flex; align-items:center; gap:7px; font-weight:700; font-family:'Hanken Grotesk',sans-serif; color:#1c1b2e; font-size:11px; margin-bottom:16px; letter-spacing:0; }
+    .ib-logo { display:flex; align-items:center; gap:7px; font-weight:700; font-family:system-ui,-apple-system,'Segoe UI',sans-serif; color:#1c1b2e; font-size:11px; margin-bottom:16px; letter-spacing:0; }
     .ib-logo .m { width:20px; height:20px; border-radius:6px; background:linear-gradient(135deg,#6b5cff,#8b5cf6); color:#fff; display:grid; place-items:center; font-size:9px; font-weight:700; }
     .ib-grp { font-size:8px; letter-spacing:1px; text-transform:uppercase; color:#a9a6c0; margin:12px 0 6px; }
     .ib-grp:first-of-type { margin-top:0; }
@@ -80,13 +80,13 @@
     .ib-main { flex:1; padding:14px 16px; min-width:0; }
     .ib-kick { display:inline-flex; align-items:center; gap:6px; font-size:8.5px; color:var(--ib); font-weight:600; margin-bottom:6px; }
     .ib-kick::before { content:""; width:5px; height:5px; border-radius:50%; background:var(--ib); }
-    .ib-h { font-family:'Hanken Grotesk',sans-serif; font-weight:700; font-size:16px; color:#1c1b2e; line-height:1.1; }
+    .ib-h { font-family:system-ui,-apple-system,'Segoe UI',sans-serif; font-weight:700; font-size:16px; color:#1c1b2e; line-height:1.1; }
     .ib-sub { font-size:9.5px; color:#8c8aa0; margin-bottom:12px; }
     .ib-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:7px; margin-bottom:12px; }
     .ib-stat { border:1px solid #eceaf6; border-radius:9px; padding:8px 7px; }
     .ib-stat.warn { background:#fdf8ec; border-color:#f1e5c4; }
     .ib-stat .k { font-size:7px; letter-spacing:.5px; text-transform:uppercase; color:#a9a6c0; margin-bottom:3px; line-height:1.2; }
-    .ib-stat .n { font-family:'Fraunces',serif; font-size:18px; line-height:1; }
+    .ib-stat .n { font-family:system-ui,-apple-system,'Segoe UI',sans-serif; font-size:18px; line-height:1; }
     .ib-stat .s { font-size:7.5px; color:#a9a6c0; margin-top:3px; }
     .ib-stat .n.p1{color:#6b5cff} .ib-stat .n.p2{color:#1f9d63} .ib-stat .n.p3{color:#2563eb} .ib-stat .n.p4{color:#d98324}
     .ib-chart { border:1px solid #eceaf6; border-radius:11px; padding:11px 12px; }
@@ -106,7 +106,7 @@
     .iv { --iv:#2f7d4f; background:#eaf3ec; padding:22px 20px; min-height:320px; display:flex; align-items:center; justify-content:center; }
     .iv-card { width:100%; background:#fbfdfb; border:1px solid #d8e8dd; border-radius:16px; box-shadow:0 14px 30px -18px rgba(36,70,48,.4); overflow:hidden; }
     .iv-head { display:flex; align-items:flex-start; justify-content:space-between; padding:16px 18px; border-bottom:1px solid #e8f0ea; }
-    .iv-head h3 { font-family:'Fraunces',serif; font-weight:500; font-size:16px; color:#1c2b20; line-height:1.1; }
+    .iv-head h3 { font-family:system-ui,-apple-system,'Segoe UI',sans-serif; font-weight:500; font-size:16px; color:#1c2b20; line-height:1.1; }
     .iv-head .pc { font-size:8.5px; letter-spacing:1px; text-transform:uppercase; color:var(--iv); font-weight:600; margin-top:4px; }
     .iv-badge { width:26px; height:26px; border-radius:8px; background:#e4f1e8; color:var(--iv); font-weight:700; font-size:12px; display:grid; place-items:center; flex-shrink:0; }
     .iv-row { display:flex; align-items:center; gap:12px; padding:14px 18px; border-bottom:1px solid #eef5f0; }
