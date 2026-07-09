@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Siyaya Digital">
+  <defs>
+    <linearGradient id="wordGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#c6d2ea"/>
+    </linearGradient>
+    <filter id="headGlow" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs><g><rect x="74.4" y="209.3" width="26.0" height="26.0" rx="6.8" fill="rgb(255,255,255)" filter="url(#headGlow)" transform="rotate(0 87.4 222.3)"/>
+<rect x="105.3" y="222.5" width="16.6" height="16.6" rx="4.3" fill="rgb(246,150,13)" transform="rotate(0 113.6 230.8)"/>
+<rect x="132.4" y="222.5" width="17.0" height="17.0" rx="4.4" fill="rgb(249,114,23)" transform="rotate(0 140.9 231.1)"/>
+<rect x="158.5" y="214.2" width="17.4" height="17.4" rx="4.5" fill="rgb(242,84,52)" transform="rotate(0 167.2 222.9)"/>
+<rect x="181.4" y="198.3" width="17.8" height="17.8" rx="4.6" fill="rgb(238,69,87)" transform="rotate(0 190.3 207.1)"/>
+<rect x="199.3" y="175.9" width="18.1" height="18.1" rx="4.7" fill="rgb(237,71,125)" transform="rotate(0 208.3 184.9)"/>
+<rect x="210.7" y="148.9" width="18.4" height="18.4" rx="4.8" fill="rgb(234,72,163)" transform="rotate(0 219.9 158.1)"/>
+<rect x="214.7" y="119.5" width="18.6" height="18.6" rx="4.8" fill="rgb(226,71,198)" transform="rotate(0 224.0 128.8)"/>
+<rect x="210.9" y="90.1" width="18.8" height="18.8" rx="4.9" fill="rgb(218,70,234)" transform="rotate(0 220.3 99.5)"/>
+<rect x="199.7" y="63.0" width="19.0" height="19.0" rx="4.9" fill="rgb(200,75,242)" transform="rotate(0 209.2 72.5)"/>
+<rect x="181.9" y="40.4" width="19.1" height="19.1" rx="5.0" fill="rgb(179,82,245)" transform="rotate(0 191.4 49.9)"/>
+<rect x="159.0" y="24.2" width="19.1" height="19.1" rx="5.0" fill="rgb(163,86,247)" transform="rotate(0 168.6 33.7)"/>
+<rect x="132.9" y="15.7" width="19.1" height="19.1" rx="5.0" fill="rgb(152,89,246)" transform="rotate(0 142.4 25.2)"/>
+<rect x="105.6" y="15.5" width="19.0" height="19.0" rx="4.9" fill="rgb(141,91,246)" transform="rotate(0 115.1 24.9)"/>
+<rect x="79.4" y="23.6" width="18.8" height="18.8" rx="4.9" fill="rgb(124,96,244)" transform="rotate(0 88.8 33.1)"/>
+<rect x="56.4" y="39.6" width="18.6" height="18.6" rx="4.8" fill="rgb(106,100,242)" transform="rotate(0 65.7 48.9)"/>
+<rect x="38.5" y="61.9" width="18.4" height="18.4" rx="4.8" fill="rgb(88,110,242)" transform="rotate(0 47.7 71.1)"/>
+<rect x="27.1" y="88.9" width="18.1" height="18.1" rx="4.7" fill="rgb(70,122,245)" transform="rotate(0 36.1 97.9)"/>
+<rect x="23.1" y="118.3" width="17.8" height="17.8" rx="4.6" fill="rgb(54,145,245)" transform="rotate(0 32.0 127.2)"/>
+<rect x="27.0" y="147.8" width="17.4" height="17.4" rx="4.5" fill="rgb(43,182,241)" transform="rotate(0 35.7 156.5)"/>
+<rect x="38.3" y="175.0" width="17.0" height="17.0" rx="4.4" fill="rgb(35,211,232)" transform="rotate(0 46.8 183.5)"/>
+<rect x="56.3" y="197.8" width="16.6" height="16.6" rx="4.3" fill="rgb(43,212,201)" transform="rotate(0 64.6 206.1)"/>
+</g></svg>
