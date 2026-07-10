@@ -80,19 +80,27 @@
     -webkit-background-clip:text;background-clip:text;color:transparent;
   }
 
-  /* ---------- nav ---------- */
+  /* ---------- nav (floating pill) ---------- */
   nav{
     position:sticky;top:0;z-index:60;
-    backdrop-filter:blur(16px);
-    background:rgba(7,11,22,.62);
-    border-bottom:1px solid transparent;
-    transition:border-color .3s, background .3s;
+    padding:14px 0;background:transparent;
+    transition:padding .3s;
   }
-  nav.scrolled{border-color:var(--line);background:rgba(7,11,22,.82)}
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px}
-  .brand{display:flex;align-items:center;gap:11px;font-weight:600;font-size:14px;letter-spacing:.16em;font-family:var(--font-mono)}
+  nav.scrolled{padding:8px 0}
+  .nav-inner{
+    display:flex;align-items:center;justify-content:space-between;gap:22px;
+    padding:10px 12px 10px 22px;
+    background:rgba(12,18,32,.72);
+    backdrop-filter:blur(18px);
+    border:1px solid var(--line-2);
+    border-radius:999px;
+    box-shadow:0 16px 40px -16px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.04);
+    transition:box-shadow .3s, background .3s;
+  }
+  nav.scrolled .nav-inner{background:rgba(12,18,32,.86);box-shadow:0 18px 46px -14px rgba(0,0,0,.8)}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:600;font-size:14px;letter-spacing:.16em;font-family:var(--font-mono);flex-shrink:0}
   .brand-mark{width:26px;height:26px;object-fit:contain;display:block;flex-shrink:0;filter:drop-shadow(0 0 10px rgba(59,130,246,.4))}
-  .nav-links{display:flex;align-items:center;gap:28px;font-size:14.5px;color:var(--ink-soft)}
+  .nav-links{display:flex;align-items:center;gap:26px;font-size:14.5px;color:var(--ink-soft)}
   .nav-links a{transition:color .2s}
   .nav-links a:hover{color:var(--ink)}
   .nav-cta{
@@ -101,10 +109,11 @@
     background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
   }
   .nav-cta:hover{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(34,211,238,.12);color:#fff}
-  @media(max-width:680px){
-    .nav-inner{flex-wrap:wrap;height:auto;padding:12px 0;gap:12px 0}
+  @media(max-width:760px){
+    nav{padding:12px 0}
+    .nav-inner{flex-wrap:wrap;justify-content:center;gap:10px 16px;border-radius:24px;padding:14px 18px}
     .brand{flex:0 0 auto}
-    .nav-links{flex:1 1 100%;justify-content:space-between;gap:10px 14px;font-size:13.5px;flex-wrap:wrap}
+    .nav-links{flex:1 1 100%;justify-content:center;gap:10px 18px;font-size:13.5px;flex-wrap:wrap}
     .nav-cta{padding:7px 14px}
   }
 
@@ -408,20 +417,6 @@
         </g>
       </svg>
 
-      <!-- the input core -->
-      <div class="core">
-        <form class="core-form" id="coreForm" role="search" autocomplete="off">
-          <span class="core-glyph" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-          </span>
-          <input class="core-input" id="coreInput" type="text" name="q" aria-label="Explore the Siyaya ecosystem" placeholder="Explore the ecosystem…">
-          <button class="core-enter" type="submit" aria-label="Enter">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
-          </button>
-        </form>
-        <div class="core-hint mono">Building intelligence · connecting futures</div>
-      </div>
-
       <!-- nodes -->
       <div class="node-grid">
         <a href="/clockx" class="node left is-soon" style="left:16%;top:19.4%;--nc:var(--cyan)">
@@ -659,19 +654,6 @@
     es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*60);io.unobserve(e.target)}})
   },{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-  // decorative core input: keep focus on the page, don't navigate away
-  const coreForm=document.getElementById('coreForm');
-  const coreInput=document.getElementById('coreInput');
-  if(coreForm){
-    coreForm.addEventListener('submit',(e)=>{
-      e.preventDefault();
-      coreInput.animate(
-        [{transform:'translateY(-1px) scale(1)'},{transform:'translateY(-1px) scale(1.03)'},{transform:'translateY(-1px) scale(1)'}],
-        {duration:260,easing:'ease-out'}
-      );
-    });
-  }
 
   /* ============================================================
      The X core — a mosaic of gradient squares rendered on canvas.

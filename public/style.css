@@ -86,16 +86,19 @@ p  { color: var(--ink-soft); }
 /* ── NAV ── */
 .nav {
   position:sticky; top:0; z-index:100;
-  background:rgba(7,11,22,0.72);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--line);
-  height:70px; display:flex; align-items:center;
+  background:transparent; border-bottom:none;
+  padding:14px 16px; display:block;
 }
 .nav__inner {
   display:flex; align-items:center;
-  justify-content:space-between;
-  width:100%; max-width:1080px;
-  margin:0 auto; padding:0 28px;
+  justify-content:space-between; gap:22px;
+  max-width:1080px; margin:0 auto;
+  padding:10px 12px 10px 22px;
+  background:rgba(12,18,32,.72);
+  backdrop-filter:blur(18px);
+  border:1px solid var(--line-2);
+  border-radius:999px;
+  box-shadow:0 16px 40px -16px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.04);
 }
 .nav__logo {
   display:flex; align-items:center; gap:11px;
@@ -288,11 +291,11 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 
 /* ── Responsive ── */
 @media(max-width:768px){
-  .nav { height:auto; }
-  .nav__inner { flex-wrap:wrap; row-gap:10px; padding-top:12px; padding-bottom:12px; }
-  .nav__links { flex:1 1 100%; gap:8px 16px; flex-wrap:wrap; justify-content:flex-start; }
+  .nav { padding:12px 12px; }
+  .nav__inner { flex-wrap:wrap; justify-content:center; gap:10px 16px; border-radius:24px; padding:14px 18px; }
+  .nav__links { flex:1 1 100%; gap:8px 16px; flex-wrap:wrap; justify-content:center; }
   .nav__link { font-size:0.85rem; }
-  .nav__cta { margin-left:auto; }
+  .nav__cta { margin-left:0; }
   .legal-hero { padding:30px 24px; }
   .legal-clause { padding:22px 20px; }
   .impressum-grid { grid-template-columns:1fr; }
