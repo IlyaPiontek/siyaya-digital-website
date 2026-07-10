@@ -201,10 +201,11 @@
     padding:2px 7px;border-radius:99px;border:1px solid var(--line-2);color:var(--ink-soft);
   }
   .node-tag.live{color:var(--nc);border-color:color-mix(in srgb,var(--nc) 50%, transparent)}
-  .node.left .node-inner{flex-direction:row}
-  .node.right .node-inner{flex-direction:row-reverse}
-  .node.right .node-meta{align-items:flex-end;text-align:right}
-  .node.right .node-tag{align-self:flex-end}
+  /* icon sits inner (next to the connecting line), label sits outer (away from the mosaic) */
+  .node.left .node-inner{flex-direction:row-reverse}
+  .node.left .node-meta{align-items:flex-end;text-align:right}
+  .node.left .node-tag{align-self:flex-end}
+  .node.right .node-inner{flex-direction:row}
   .node.is-soon .node-badge{opacity:.9}
 
   /* wordmark + tagline under the stage */
@@ -242,9 +243,9 @@
       display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;margin-top:42px;
     }
     .node{position:static;transform:none}
-    .node .node-inner,.node.right .node-inner{flex-direction:row}
-    .node.right .node-meta{align-items:flex-start;text-align:left}
-    .node.right .node-tag{align-self:flex-start}
+    .node.left .node-inner,.node.right .node-inner{flex-direction:row}
+    .node.left .node-meta,.node.right .node-meta{align-items:flex-start;text-align:left}
+    .node.left .node-tag,.node.right .node-tag{align-self:flex-start}
     .node .node-inner{
       border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:12px 14px;
     }
