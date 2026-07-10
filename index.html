@@ -137,15 +137,15 @@
   .stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
   .stage .traces{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 
-  /* central input = the X core */
+  /* logo at the X core */
   .core{
     position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-    width:min(360px,64%);z-index:5;
+    width:min(470px,56%);z-index:5;
   }
-  /* dark backdrop so the input + hint stay legible over the mosaic */
+  /* dark backdrop so the logo stays legible over the mosaic */
   .core::before{
-    content:"";position:absolute;inset:-22px -34px;z-index:-1;pointer-events:none;
-    background:radial-gradient(72% 92% at 50% 42%, rgba(6,10,20,.96), rgba(6,10,20,.62) 52%, transparent 82%);
+    content:"";position:absolute;inset:-14% -10%;z-index:-1;pointer-events:none;
+    background:radial-gradient(64% 78% at 50% 50%, rgba(6,10,20,.94), rgba(6,10,20,.55) 55%, transparent 82%);
   }
   .core-form{position:relative;display:flex;align-items:center}
   .core-input{
@@ -208,7 +208,7 @@
   .node.is-soon .node-badge{opacity:.9}
 
   /* wordmark + tagline under the stage */
-  .hero-logo{width:min(520px,86%);height:auto;margin:28px auto 4px;display:block}
+  .hero-logo{width:100%;height:auto;display:block}
   .hero-tag{
     margin-top:14px;font-family:var(--font-mono);
     font-size:clamp(11px,2.4vw,14px);letter-spacing:.26em;text-transform:uppercase;
@@ -417,6 +417,11 @@
         </g>
       </svg>
 
+      <!-- logo at the X core -->
+      <div class="core">
+        <img class="hero-logo reveal" src="/public/siyaya-logo.png" alt="Siyaya Digital" width="937" height="432">
+      </div>
+
       <!-- nodes -->
       <div class="node-grid">
         <a href="/clockx" class="node left is-soon" style="left:16%;top:19.4%;--nc:var(--cyan)">
@@ -475,7 +480,6 @@
       </div>
     </div>
 
-    <img class="hero-logo reveal" src="/public/siyaya-logo.png" alt="Siyaya Digital" width="937" height="432">
     <div class="hero-tag reveal">
       <span>Building intelligence</span><span class="sep">·</span><span>Connecting futures</span>
     </div>
